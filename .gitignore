@@ -20,6 +20,7 @@
 
 # RStudio files
 .Rproj.user/
+*.Rproj
 
 # produced vignettes
 vignettes/*.html
@@ -35,6 +36,10 @@ vignettes/*.pdf
 # Temporary files created by R markdown
 *.utf8.md
 *.knit.md
+*.tex
+
+# large files & folders produced with knitr and papaja
+*figure-latex
 
 # R Environment Variables
 .Renviron
@@ -47,3 +52,6 @@ po/*~
 
 # RStudio Connect folder
 rsconnect/
+
+# other
+*.DS_Store
