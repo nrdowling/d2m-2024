@@ -1,0 +1,243 @@
+Timestamp,"You are meeting a stranger in Chicago. You both know that you need to meet each other today, but you haven't agreed on a place or a time and you have no means of communication. WHERE do you go to meet them? Remember, you cannot communicate with them now or previously in any way.","You are meeting a stranger in Chicago. You both know that you need to meet each other today, but you haven't agreed on a place or a time and you have no means of communication. WHAT TIME do you go to meet them?","You are meeting another UChicago student who you have not met before. You both know that you are both UChicago students and that you should meet today, but you haven't agreed on a meeting location and you have no means of communication. Where do you go to meet them?",You are meeting your closest friend at UChicago. You haven't agreed on a meeting location and you have no means of communication. Where do you go to meet them?,"You and an anonymous partner need to choose heads or tails. If you both choose the SAME answer, you both win. Which do you choose?","You and an anonymous partner need to choose heads or tails. If you both choose DIFFERENT answers, you both win. Which do you choose?","You and an anonymous partner each give a number between 0 and 10. If you choose the same number, you both win. What number do you choose?","You and an anonymous partner each choose a number from the list below. If you choose the same number, you both win. Which number do you choose?","You and an anonymous partner each give a number. If you say the same number, you both win. The bigger the number, the more you win. What number do you choose? (your answer should contain only numerical characters; no letters, punctuation, or symbols)",Which best describes you?,OPTIONAL: Which of the following describe you? Select all that apply.,"OPTIONAL: What language do you feel most comfortable/proficient speaking? (If you consider yourself equally proficient in more than one language, list all.)",STRANGER_ERROR,STUDENT_ERROR,FRIEND_ERROR
+2020-04-30T11:46:58Z,The bean,1899-12-30T02:00:00Z,the reg,Crerar,Heads,Tails,5,100,1000000,NA,NA,NA,NA,NA,NA
+2020-04-30T11:24:43Z,Their home,1899-12-30T07:30:00Z,The Reg,Their house,Heads,Heads,5,7,100,NA,NA,NA,TRUE,NA,NA
+2020-05-01T01:19:13Z,Baker at mealtime,1899-12-30T08:00:00Z,NA,NA,Heads,Tails,2,13,10000,NA,NA,NA,TRUE,TRUE,NA
+2020-05-03T21:44:32Z,Their house,1899-12-30T08:00:00Z,The Reg,The Reg (our usual spot),Tails,Tails,4,7,100,NA,NA,NA,TRUE,NA,NA
+2020-04-30T09:27:58Z,Millennium Park,1899-12-30T09:00:00Z,At the center of the Quad,The entrance of his or her dorm.,Heads,Heads,6,261,999,NA,NA,NA,NA,NA,NA
+2020-05-02T20:56:33Z,Union Station,1899-12-30T09:00:00Z,The Reg,Pret,Heads,Tails,1,99,999,NA,NA,NA,NA,NA,NA
+2020-05-05T07:48:30Z,at their home,1899-12-30T10:00:00Z,the front of the Reg,their home,Heads,Tails,5,7,100,NA,NA,NA,TRUE,NA,NA
+2020-05-03T15:49:24Z,Clark and Lake,1899-12-30T10:00:00Z,Pret A Manger,Reg,Heads,Heads,10,100,999,NA,NA,NA,NA,NA,NA
+2020-04-30T10:30:42Z,Hutchinson Commons,1899-12-30T10:00:00Z,Harper Library,Dorm Room,Heads,Tails,7,261,100,NA,NA,NA,NA,NA,NA
+2020-05-03T23:55:16Z,no idea,1899-12-30T10:00:00Z,probably Reg,Reg,Heads,Tails,1,100,1000000,NA,NA,NA,NA,NA,NA
+2020-05-02T02:41:41Z,Reg,1899-12-30T10:00:00Z,Bookstore,My room,Heads,Heads,0,100,1000000,NA,NA,NA,NA,NA,NA
+2020-05-04T01:24:10Z,Reg,1899-12-30T10:00:00Z,The Reg,Campus North,Heads,Heads,5,100,100,NA,NA,NA,NA,NA,NA
+2020-04-30T12:52:05Z,The Bean,1899-12-30T10:00:00Z,Regenstein Library first floor,My fraternity house,Heads,Heads,1,100,1000000,NA,NA,NA,NA,NA,NA
+2020-05-04T02:14:49Z,The Bean,1899-12-30T10:00:00Z,Pret,Reg,Heads,Tails,5,100,100,NA,NA,NA,NA,NA,NA
+2020-05-04T03:38:48Z,Their home,1899-12-30T10:00:00Z,Library,Their home,Tails,Heads,5,13,1000,NA,NA,NA,TRUE,NA,NA
+2020-04-21T11:24:09Z,Their house,1899-12-30T10:00:00Z,"The reg, A-level",Show up to their room,Heads,Heads,10,100,100,NA,NA,NA,TRUE,NA,NA
+2020-05-04T04:09:24Z,Their office or place of employment,1899-12-30T10:00:00Z,Reynolds club,Our apartment,Heads,Heads,5,100,1000000,NA,NA,NA,TRUE,NA,NA
+2020-04-30T11:25:18Z,Union Station,1899-12-30T10:00:00Z,Bartlett or the Reg,Stony Island,NA,Heads,5,100,1000,NA,NA,NA,NA,NA,NA
+2020-05-03T14:57:08Z,"where I know they may be, like their job or school",1899-12-30T10:00:00Z,Reg,Their apartment,Heads,Heads,5,100,100,NA,NA,NA,TRUE,NA,NA
+2020-04-30T12:16:33Z,where they are staying,1899-12-30T10:00:00Z,reynolds club,their or my apartment,Heads,Heads,5,100,1200,NA,NA,NA,TRUE,NA,NA
+2020-05-04T00:02:52Z,Where we last spoke.,1899-12-30T10:00:00Z,"The middle of the quad, hoping they walk by",My apartment (we are roommates),Tails,Tails,7,7,1000000000000,NA,NA,NA,TRUE,NA,NA
+2020-04-30T12:27:35Z,I would try to meet them outside the reg since I feel like there is a lot of traffic and likely hood that I would be able to find them.,1899-12-30T10:30:00Z,The Reg,At their dorm,Tails,Tails,7,7,1000000,NA,NA,NA,NA,NA,NA
+2020-04-21T11:05:25Z,The bean,1899-12-30T10:30:00Z,Reg,Dorms,Heads,Tails,5,13,10,NA,NA,NA,NA,NA,NA
+2020-04-30T11:31:08Z,At their hotel/dorm,1899-12-30T11:00:00Z,The quad,Their house,Heads,Heads,0,100,1000000,NA,NA,NA,TRUE,NA,NA
+2020-05-02T02:06:49Z,Bartlett Dining Commons,1899-12-30T11:00:00Z,The Reg,Max P Lobby,Heads,Heads,5,100,1000000,NA,NA,NA,NA,NA,NA
+2020-05-01T11:32:01Z,Find out where they live and go meet them there in the early morning.,1899-12-30T11:00:00Z,"Meet them at the place that corresponds to the reason why you're meeting them (i.e. project, meet in Reg)",Meet them in their room.,Heads,Heads,7,7,1000000,NA,NA,NA,TRUE,TRUE,NA
+2020-04-21T11:05:14Z,Harper,1899-12-30T11:00:00Z,The Reg,Dollop,Heads,Tails,7,261,67,NA,NA,NA,NA,NA,NA
+2020-05-03T12:44:58Z,Millennium Park,1899-12-30T11:00:00Z,First floor of the reg,Mansueto,Heads,Heads,7,100,1000000000,NA,NA,NA,NA,NA,NA
+2020-04-21T11:08:20Z,Philz Coffee,1899-12-30T11:00:00Z,Regenstein Library,In my dorm,Heads,Heads,7,99,1000,NA,NA,NA,NA,NA,NA
+2020-05-03T21:01:30Z,Sears Tower,1899-12-30T11:00:00Z,The reg,Our apartment,Heads,Heads,7,7,7,NA,NA,NA,NA,NA,NA
+2020-04-21T11:24:37Z,Starbucks Reserve,1899-12-30T11:00:00Z,Ex Lib,At their apartment,Heads,Heads,5,100,1000,NA,NA,NA,NA,NA,NA
+2020-04-21T11:25:11Z,The Bean,1899-12-30T11:00:00Z,The Reg (library),Dollop,Heads,Heads,7,100,1000000,NA,NA,NA,NA,NA,NA
+2020-04-21T11:24:01Z,the bean,1899-12-30T11:00:00Z,Pret-a-Manger,Lobby of Max P East,Heads,Heads,7,100,1000,NA,NA,NA,NA,NA,NA
+2020-05-02T12:17:55Z,The Bean.,1899-12-30T11:00:00Z,In front of the quad.,In front of North.,Tails,Tails,7,7,100,NA,NA,NA,NA,NA,NA
+2020-04-30T13:05:24Z,Their house or apartment most likely,1899-12-30T11:00:00Z,Probably the reg if I don't know what dorm/off campus housing they're in,I would meet them at their apartment,Tails,Tails,7,261,1000000,NA,NA,NA,TRUE,NA,NA
+2020-04-21T11:08:51Z,UChicago Central Quad,1899-12-30T11:00:00Z,The Reg,My apartment,Heads,Tails,7,7,10000,NA,NA,NA,NA,NA,NA
+2020-05-02T12:14:02Z,A place where you both have been together before.,1899-12-30T12:00:00Z,The middle of the quad; the reg,the reg,Heads,Heads,5,100,500,NA,NA,NA,TRUE,TRUE,NA
+2020-04-30T11:37:14Z,at their home as early as possible,1899-12-30T12:00:00Z,quad,"Where I usually see them, at CSIL.",Heads,Heads,1,100,1000000,NA,NA,NA,TRUE,NA,NA
+2020-04-30T01:37:20Z,Bean,1899-12-30T12:00:00Z,Main quad,North,Heads,Tails,0,100,1000000,NA,NA,NA,NA,NA,NA
+2020-04-29T22:13:00Z,Burton Judson Courts,1899-12-30T12:00:00Z,the quad,Burton Judson Courts,Tails,Heads,5,100,1000000,NA,NA,NA,NA,NA,NA
+2020-05-03T20:55:56Z,Center of the quad,1899-12-30T12:00:00Z,Reg,Koi Pond (Botany Pond),Heads,Heads,2,100,1000000,NA,NA,NA,NA,NA,NA
+2020-04-30T12:26:20Z,Downtown near the loop,1899-12-30T12:00:00Z,Regenstein Library,Their apartment or a common hangout place,Tails,Tails,7,7,1000000,NA,NA,NA,NA,NA,NA
+2020-05-03T22:04:09Z,Ex Lub,1899-12-30T12:00:00Z,Reynolds,Our apt,Heads,Heads,7,99,777,NA,NA,NA,NA,NA,NA
+2020-05-03T23:34:47Z,Go to their house,1899-12-30T12:00:00Z,I just don't meet them then,Their dorm,Heads,Heads,10,100,1000000000000,NA,NA,NA,TRUE,NA,NA
+2020-04-30T20:49:10Z,Grant Park,1899-12-30T12:00:00Z,The Reg,Our apartment,Heads,Heads,7,100,1000,NA,NA,NA,NA,NA,NA
+2020-04-30T10:49:50Z,I don't go meet them.,1899-12-30T12:00:00Z,The Reg,Their apartment,Heads,Heads,NA,7,1003,NA,NA,NA,NA,NA,NA
+2020-04-21T11:07:28Z,I would meet them in front of my dorm (Campus North),1899-12-30T12:00:00Z,In the Quad,In my dorm building (Campus North),Heads,Tails,5,13,1000000,NA,NA,NA,NA,NA,NA
+2020-05-03T10:42:31Z,I would meet them in the lobby of my dorm or by their room.,1899-12-30T12:00:00Z,This is tough but I would also say somewhere in the dorm!,Their room!,Tails,Tails,5,555,5,NA,NA,NA,NA,NA,NA
+2020-04-30T02:58:28Z,Magnificent Mile,1899-12-30T12:00:00Z,Regenstein,Regenstein,Heads,Heads,5,100,50,NA,NA,NA,NA,NA,NA
+2020-05-02T16:01:09Z,Magnificent Mile,1899-12-30T12:00:00Z,Pret,The Reg,Heads,Tails,5,100,1000,NA,NA,NA,NA,NA,NA
+2020-04-30T11:45:10Z,Meet them at your apartment.,1899-12-30T12:00:00Z,The Reg,My apartment,Heads,Tails,5,100,1000000,NA,NA,NA,NA,NA,NA
+2020-04-30T11:51:04Z,Millennium Park,1899-12-30T12:00:00Z,The Reg,Max P Central,Tails,Tails,5,99,999,NA,NA,NA,NA,NA,NA
+2020-04-30T18:54:02Z,Millennium Park,1899-12-30T12:00:00Z,The Reg,North,Heads,Heads,7,100,1000000,NA,NA,NA,NA,NA,NA
+2020-05-01T10:11:39Z,Millennium Park,1899-12-30T12:00:00Z,The Quad,My apartment,Heads,Tails,5,7,1000000000000,NA,NA,NA,NA,NA,NA
+2020-05-01T18:13:19Z,Millennium Park,1899-12-30T12:00:00Z,"The quad (specifically, the very center of the quad)",The Regenstein Library,Heads,Heads,10,7,1000000,NA,NA,NA,NA,NA,NA
+2020-05-01T08:11:22Z,My apartment,1899-12-30T12:00:00Z,The Quad,My room,Heads,Tails,7,99,1000000,NA,NA,NA,NA,NA,NA
+2020-05-03T08:54:30Z,My home,1899-12-30T12:00:00Z,cafeteria,home,Tails,Heads,7,7,100,NA,NA,NA,NA,NA,NA
+2020-05-04T10:04:19Z,Reynolds Club,1899-12-30T12:00:00Z,Reynolds Club,Pret,Tails,Heads,3,261,1000000,NA,NA,NA,NA,NA,NA
+2020-04-30T09:09:21Z,"Somewhere prominent downtown, like the Sears tower",1899-12-30T12:00:00Z,The Reg,House lounge (or his room),Heads,Heads,7,100,100,NA,NA,NA,NA,NA,NA
+2020-04-30T11:46:32Z,Station,1899-12-30T12:00:00Z,Reg,Reg,Heads,Heads,5,100,100,NA,NA,NA,NA,NA,NA
+2020-04-21T11:06:23Z,The Bean,1899-12-30T12:00:00Z,Reynolds Club,Max Central,Heads,Heads,7,7,1000000,NA,NA,NA,NA,NA,NA
+2020-04-30T12:44:11Z,The Bean,1899-12-30T12:00:00Z,I stand on the quad with a sign that has my name on it,Bartlett,Heads,Heads,5,7,1000000,NA,NA,NA,NA,NA,NA
+2020-04-30T14:11:40Z,The bean,1899-12-30T12:00:00Z,Reg,Hutch,Heads,Tails,5,555,5000,NA,NA,NA,NA,NA,NA
+2020-04-30T15:22:16Z,the Bean,1899-12-30T12:00:00Z,The reg,Mine,Heads,Heads,10,100,10000000,NA,NA,NA,NA,NA,NA
+2020-04-30T17:11:01Z,the bean,1899-12-30T12:00:00Z,the reg entrance,pret,Heads,Heads,5,100,1010,NA,NA,NA,NA,NA,NA
+2020-05-01T07:05:54Z,The Bean,1899-12-30T12:00:00Z,The Reg,Her house,Heads,Heads,7,100,1000000,NA,NA,NA,NA,NA,NA
+2020-05-01T17:47:47Z,The Bean,1899-12-30T12:00:00Z,Center of the Quad,Their dorm,Heads,Heads,5,100,99e18,NA,NA,NA,NA,NA,NA
+2020-05-02T15:59:47Z,The Bean,1899-12-30T12:00:00Z,The Reg,In front of my dorm,Heads,Tails,7,7,100,NA,NA,NA,NA,NA,NA
+2020-05-03T03:56:15Z,the Bean,1899-12-30T12:00:00Z,the Quad,Plein Air Café,Heads,Heads,3,100,1000000,NA,NA,NA,NA,NA,NA
+2020-05-03T10:57:05Z,The Bean,1899-12-30T12:00:00Z,The Quad,The Logan Center,Heads,Heads,5,7,1000000,NA,NA,NA,NA,NA,NA
+2020-05-03T13:25:36Z,The Bean,1899-12-30T12:00:00Z,In front of the Reg,I'd meet them at their apartment,Heads,Heads,3,7,1000000,NA,NA,NA,NA,NA,NA
+2020-05-04T08:49:59Z,The bean,1899-12-30T12:00:00Z,the regenstein library,my apartment,Heads,Tails,7,100,1000000,NA,NA,NA,NA,NA,NA
+2020-05-04T09:54:00Z,The Bean,1899-12-30T12:00:00Z,The Reg,Our Apartment,Heads,Tails,0,100,1000000,NA,NA,NA,NA,NA,NA
+2020-05-03T18:28:02Z,The Bean in Millennium Park,1899-12-30T12:00:00Z,The center quadrangle,Our dormitory,Heads,Tails,7,100,1000,NA,NA,NA,NA,NA,NA
+2020-04-30T11:15:22Z,the Bean!,1899-12-30T12:00:00Z,"outside the Reg, the Arch",at their room,Heads,Heads,7,7,100,NA,NA,NA,NA,NA,NA
+2020-05-02T20:56:52Z,The bean?,1899-12-30T12:00:00Z,The reg,Our house lounge,Heads,Heads,7,7,1000000000,NA,NA,NA,NA,NA,NA
+2020-05-04T02:12:14Z,The Chicago Bean,1899-12-30T12:00:00Z,The Reg,The Reg,Heads,Tails,5,100,1000000,NA,NA,NA,NA,NA,NA
+2020-05-03T21:18:30Z,The library,1899-12-30T12:00:00Z,Outside the Bookstore,Outside the Bookstore,Heads,Heads,7,7,1000,NA,NA,NA,NA,NA,NA
+2020-05-04T03:07:45Z,The main quad,1899-12-30T12:00:00Z,Reynolds Club,Regenstein Library,Heads,Heads,7,7,1000000,NA,NA,NA,NA,NA,NA
+2020-04-30T10:58:48Z,the middle of the quad or the A level,1899-12-30T12:00:00Z,the quad,The house lounge,Heads,Tails,7,7,100,NA,NA,NA,NA,NA,NA
+2020-04-30T11:12:42Z,the quad,1899-12-30T12:00:00Z,the reg,her room,Heads,Tails,5,100,1000000,NA,NA,NA,NA,NA,NA
+2020-04-30T12:26:04Z,The quad,1899-12-30T12:00:00Z,The quad,The library,Heads,Tails,5,100,1000,NA,NA,NA,NA,NA,NA
+2020-05-03T15:04:06Z,the quad,1899-12-30T12:00:00Z,The quad,The reg,Heads,Heads,5,100,1000,NA,NA,NA,NA,NA,NA
+2020-05-03T20:41:48Z,The reg,1899-12-30T12:00:00Z,the reg,Cathey,Heads,Heads,7,100,100,NA,NA,NA,NA,NA,NA
+2020-05-03T23:38:51Z,the reg,1899-12-30T12:00:00Z,the reg,my apartment,Tails,Tails,5,100,1000000,NA,NA,NA,NA,NA,NA
+2020-05-01T22:30:56Z,their house/where they live,1899-12-30T12:00:00Z,the library/ a common space for students to hang out,their room,Heads,Heads,7,7,100,NA,NA,NA,NA,TRUE,NA
+2020-04-21T11:09:22Z,UChicago - dollop,1899-12-30T12:00:00Z,UChicago - dollop,Dollop,Heads,Heads,5,100,1000000,NA,NA,NA,NA,NA,NA
+2020-04-30T15:33:40Z,UChicago quad,1899-12-30T12:00:00Z,UChicago quad,my house,Heads,Tails,5,7,1000,NA,NA,NA,NA,NA,NA
+2020-04-30T11:58:01Z,where ever they are staying,1899-12-30T12:00:00Z,the middle of the quad,harper cubicles,Heads,Heads,5,100,100,NA,NA,NA,TRUE,NA,NA
+2020-05-02T17:23:42Z,where you expect them to be at a certain time,1899-12-30T12:00:00Z,no idea,where  we most frequently meet,Heads,Tails,5,100,1000000,NA,NA,NA,TRUE,NA,NA
+2020-05-04T09:54:27Z,NA,1899-12-30T12:00:00Z,Reg,NA,Heads,Tails,5,100,100,NA,NA,NA,TRUE,NA,NA
+2020-05-01T11:52:04Z,Chicago Bean,1899-12-30T12:30:00Z,Reynolds Club,My house within Campus North,Heads,Tails,8,100,1000000000,NA,NA,NA,NA,NA,NA
+2020-04-30T07:19:47Z,coffee shop/restaurant next where they're staying,1899-12-30T12:30:00Z,the quad,a coffee shop we regularly visit together,Heads,Heads,3,99,1000000,NA,NA,NA,TRUE,NA,NA
+2020-04-30T11:17:06Z,Millennium Park,1899-12-30T12:30:00Z,uchicago quad,residential hall,Heads,Heads,5,555,999,NA,NA,NA,NA,NA,NA
+2020-05-03T16:46:39Z,"The bean; if this person is in visiting Chicago, it probably seems like the most well-known ""Chicago spot.""",1899-12-30T12:30:00Z,Bartlett; I assume they have to stop by at some point.,My apartment... hopefully he comes back.,Heads,Tails,7,100,1000000000000,NA,NA,NA,NA,NA,NA
+2020-05-02T17:44:37Z,UChicago campus,1899-12-30T12:30:00Z,Campus North,Dining hall,Heads,Tails,5,100,1e15,NA,NA,NA,NA,NA,NA
+2020-05-01T13:28:06Z,a coffee shop near their place of dwelling,1899-12-30T13:00:00Z,Reynolds club,her apartment,Tails,Heads,7,99,7,NA,NA,NA,TRUE,NA,NA
+2020-05-01T02:47:28Z,Art Insitute,1899-12-30T13:00:00Z,The Reynolds Club,The Reg,Heads,Tails,10,100,1000,NA,NA,NA,NA,NA,NA
+2020-05-03T11:46:34Z,"I would either go to the place where we most commonly interact, if it was close. Or i would stay home.",1899-12-30T13:00:00Z,Library,Their house,Heads,Heads,0,100,1000,NA,NA,NA,TRUE,NA,NA
+2020-05-04T19:47:53Z,I would meet them at the quad,1899-12-30T13:00:00Z,the quad,Rockerfeller lounge,Heads,Heads,4,261,10000000,NA,NA,NA,NA,NA,NA
+2020-05-03T22:03:12Z,Millenium Park,1899-12-30T13:00:00Z,Regenstein,My apartment,Heads,Tails,4,7,100,NA,NA,NA,NA,NA,NA
+2020-05-02T10:06:18Z,Navy Pier,1899-12-30T13:00:00Z,Main quad,Their dorm rooms,Heads,Heads,7,13,1000000,NA,NA,NA,NA,NA,NA
+2020-05-04T13:08:09Z,Sears tower,1899-12-30T13:00:00Z,The Reg,The Reg,Heads,Heads,7,7,7,NA,NA,NA,NA,NA,NA
+2020-04-30T12:12:03Z,"Somewhere thats a landmark, so if I know they're in Hyde Park/campus Harper or the Reg,but if they are not associated with UChicago the Bean or something",1899-12-30T13:00:00Z,The Reg,The Lounge,Tails,Tails,5,100,50,NA,NA,NA,NA,NA,NA
+2020-04-21T11:24:12Z,Teamo,1899-12-30T13:00:00Z,Pret,Teamo,Heads,Tails,7,7,7,NA,NA,NA,NA,NA,NA
+2020-05-01T16:33:36Z,The bean,1899-12-30T13:00:00Z,Plein Air,Reg 1st floor,Heads,Heads,7,100,1000000,NA,NA,NA,NA,NA,NA
+2020-04-21T11:24:04Z,The Quad,1899-12-30T13:00:00Z,Ex Libris Cafe,Bartlett,Heads,Tails,7,13,22,NA,NA,NA,NA,NA,NA
+2020-05-03T18:25:41Z,"Where I usually see this person (i.e in class, ratner, etc)",1899-12-30T13:00:00Z,The Reg,The reg,Tails,Tails,7,7,100,NA,NA,NA,TRUE,NA,NA
+2020-05-02T16:18:15Z,Wherever we usually see each other.,1899-12-30T13:00:00Z,The Reg,The Reg,Heads,Tails,4,13,100000,NA,NA,NA,TRUE,NA,NA
+2020-05-02T11:37:54Z,The Bean,1899-12-30T13:30:00Z,Quad,Psi Upsilon,Heads,Heads,7,7,1000000,NA,NA,NA,NA,NA,NA
+2020-05-04T00:10:42Z,the bean,1899-12-30T13:30:00Z,"1st floor of the reg/in front of the reg, maybe check around on the quad.",my apartment. he is my roomate.,Heads,Tails,7,7,420,NA,NA,NA,NA,NA,NA
+2020-05-03T20:10:12Z,Grant Park,1899-12-30T14:00:00Z,The Reg,My apartment,Heads,Tails,5,100,1000000,NA,NA,NA,NA,NA,NA
+2020-04-21T11:05:45Z,Last place we met,1899-12-30T14:00:00Z,Hutchinson,Eckardt,Heads,Tails,1,555,100,NA,NA,NA,TRUE,NA,NA
+2020-05-03T13:44:46Z,Reg,1899-12-30T14:00:00Z,Reg,Reg,Heads,Tails,0,100,1000000,NA,NA,NA,NA,NA,NA
+2020-05-04T09:40:59Z,Reg first floor,1899-12-30T14:00:00Z,Reg,Reg,Heads,Heads,7,13,8,NA,NA,NA,NA,NA,NA
+2020-05-03T20:34:33Z,regenstein,1899-12-30T14:00:00Z,NA,Quad,Heads,Heads,2,100,5,NA,NA,NA,NA,NA,NA
+2020-04-30T10:05:06Z,the first floor of the reg,1899-12-30T14:00:00Z,pret or hutch,mansueto,Tails,Tails,7,7,1000000,NA,NA,NA,NA,TRUE,NA
+2020-05-04T11:27:25Z,The reg,1899-12-30T14:00:00Z,The reg,Ratner Athletics Center,Tails,Heads,7,7,500,NA,NA,NA,NA,NA,NA
+2020-05-04T11:21:08Z,Their house,1899-12-30T14:00:00Z,UChicago Quad,Their room,Heads,Heads,5,100,100,NA,NA,NA,NA,NA,NA
+2020-04-30T13:02:14Z,first floor of reg,1899-12-30T14:30:00Z,middle of quad,Pret,Heads,Tails,5,100,1000000,NA,NA,NA,NA,NA,NA
+2020-05-02T10:57:43Z,A coffee shop we both know,1899-12-30T15:00:00Z,The library,Their dorm,Heads,Tails,7,100,2000,NA,NA,NA,TRUE,NA,NA
+2020-05-04T04:48:34Z,Cloudgate,1899-12-30T15:00:00Z,Regenstein Library,Regenstein Library,Tails,Heads,7,99,1000,NA,NA,NA,NA,NA,NA
+2020-05-02T00:14:20Z,I stay in my dorm room and wait for them to find where I live.,1899-12-30T15:00:00Z,I go to their dorm/apartment.,At the dining hall.,Heads,Heads,0,100,1000000,NA,NA,NA,NA,NA,NA
+2020-05-03T19:35:22Z,"meet at a starbucks but tell a mutual friend to tell them time/address, so we do not communicate directly",1899-12-30T15:00:00Z,reg,spot we see each other the most (reg),Heads,Tails,8,261,888,NA,NA,NA,TRUE,NA,NA
+2020-05-03T14:29:59Z,The Bean,1899-12-30T15:00:00Z,Pret,The Reg,Heads,Heads,7,7,1000000000,NA,NA,NA,NA,NA,NA
+2020-05-02T13:35:51Z,the Reg,1899-12-30T15:00:00Z,the quad,stacks in the reg,Heads,Tails,7,13,1000000,NA,NA,NA,NA,NA,NA
+2020-04-30T10:58:39Z,First Floor of the reg. I am assuming we are meeting to work on school work.,1899-12-30T16:00:00Z,"A really trafficked place, like the road between the reg and the quad",Their room,Heads,Heads,5,261,100,NA,NA,NA,TRUE,TRUE,NA
+2020-04-30T13:16:32Z,"I would go to the place where they are staying; if they are visiting I would go to their hotel, if they are a student I would go to their apartment",1899-12-30T16:00:00Z,I would go to the lobby of Reynold's Club,I would meet them at our fraternity house,Heads,Tails,7,7,777,NA,NA,NA,TRUE,NA,NA
+2020-04-30T14:15:38Z,"I would go to where we last saw each other, or I would just go to their door and knock on it, surprise them",1899-12-30T16:00:00Z,the front of the reg,their room,Heads,Heads,6,100,1000000,NA,NA,NA,TRUE,NA,NA
+2020-04-30T11:09:14Z,Millenium Park/ Michigan Avenue,1899-12-30T16:00:00Z,Regenstein Library,Dollop coffee,Tails,Tails,6,100,100,NA,NA,NA,NA,NA,NA
+2020-05-03T21:40:04Z,A Starbucks,1899-12-30T17:00:00Z,The Reg,Their apartment/dorm,Heads,Tails,5,100,1000000,NA,NA,NA,NA,NA,NA
+2020-05-04T10:12:21Z,At Milenium Park near the bean.,1899-12-30T17:00:00Z,Inside the Reg near the entrance.,Outside of Max East.,Tails,Tails,5,7,100,NA,NA,NA,NA,NA,NA
+2020-04-29T17:11:47Z,"either the home of the person I am meeting if they are not likely to come to me, or stay at my home and understand that that person will come to me",1899-12-30T17:00:00Z,"the reg, the most central location on campus",our shared apartment,Heads,Tails,7,7,999,NA,NA,NA,TRUE,NA,NA
+2020-04-30T10:15:54Z,Ex Libris,1899-12-30T17:00:00Z,Pret,Hallowed Grounds,Heads,Heads,10,100,10000,NA,NA,NA,NA,NA,NA
+2020-04-30T21:55:36Z,his dorm,1899-12-30T17:00:00Z,the dining hall,their dorm,Heads,Heads,10,100,1000000000000,NA,NA,NA,TRUE,NA,NA
+2020-05-02T02:04:07Z,I house,1899-12-30T17:00:00Z,the quad,i house,Tails,Tails,1,100,1e21,NA,NA,NA,NA,NA,NA
+2020-05-03T22:16:35Z,O'hare,1899-12-30T17:00:00Z,The Reg,Their apartment,Tails,Heads,7,13,1000000,NA,NA,NA,NA,NA,NA
+2020-05-02T12:12:04Z,Pret,1899-12-30T17:00:00Z,The Reg,Trott Lounge - Campus North,Heads,Tails,5,100,1000000,NA,NA,NA,NA,NA,NA
+2020-04-21T11:24:12Z,Reg,1899-12-30T17:00:00Z,Pret or Reg,Reg,Tails,Heads,7,7,37,NA,NA,NA,NA,NA,NA
+2020-04-21T11:06:54Z,Starbucks downtown,1899-12-30T17:00:00Z,The Reg,Our dorm building,Heads,Heads,7,7,1000,NA,NA,NA,NA,NA,NA
+2020-04-30T22:29:42Z,The Reg,1899-12-30T17:00:00Z,The Reg,The Reg,Heads,Heads,10,100,100,NA,NA,NA,NA,NA,NA
+2020-04-30T11:07:04Z,"To where they live or somewhere I see them often, somewhere we run into each other frequently",1899-12-30T17:00:00Z,the reg,ratner or baker,Heads,Tails,10,100,1000000000,NA,NA,NA,TRUE,NA,NA
+2020-04-30T10:07:51Z,The Regenstein,1899-12-30T17:30:00Z,The Regenstein,My dorm room,Heads,Tails,6,100,1000,NA,NA,NA,NA,NA,NA
+2020-04-30T22:40:58Z,In the lobby of their office/apartment building,1899-12-30T18:00:00Z,The Regenstein Library,In the I-house lounge,Tails,Tails,5,100,100,NA,NA,NA,NA,NA,NA
+2020-04-30T09:46:01Z,Last place i saw them,1899-12-30T18:00:00Z,The Reg,Their apartment,Heads,Heads,5,100,1000000000,NA,NA,NA,TRUE,NA,NA
+2020-04-21T11:08:46Z,North Residential  (or the last place we met),1899-12-30T18:00:00Z,The reg,North Residential,Tails,Heads,7,261,100,NA,NA,NA,NA,NA,NA
+2020-04-30T19:18:31Z,South (the dorm),1899-12-30T18:00:00Z,Reg Library,Reg Library,Heads,Heads,1,7,10,NA,NA,NA,NA,NA,NA
+2020-05-03T19:24:08Z,The Med,1899-12-30T18:00:00Z,The Reg,Dorm,Heads,Tails,5,13,500,NA,NA,NA,NA,NA,NA
+2020-04-30T11:12:09Z,Their home,1899-12-30T18:00:00Z,Reg,Logan,Heads,Heads,7,100,1000000,NA,NA,NA,TRUE,NA,NA
+2020-04-29T21:04:29Z,Reg,1899-12-30T19:00:00Z,Ex Lib,Home,Heads,Tails,5,100,1000000000,NA,NA,NA,NA,NA,NA
+2020-05-02T18:51:42Z,The Reg,1899-12-30T19:00:00Z,The Reg,Her apt,Heads,Heads,5,100,100,NA,NA,NA,NA,NA,NA
+2020-05-02T17:41:30Z,Regenstein Library,1899-12-30T20:00:00Z,Regenstein Library,my apartment (roommates),Heads,Tails,7,100,1000000,NA,NA,NA,NA,NA,NA
+2020-05-03T15:06:40Z,The Reg,NA,The Reg,Their Apartment,Tails,Heads,7,261,100,NA,NA,NA,NA,NA,NA
+2020-05-02T09:00:57Z,NA,NA,NA,NA,Heads,Heads,NA,NA,NA,NA,NA,NA,TRUE,TRUE,NA
+2023-02-04T11:35:45Z,THE MOON!,NA,NA,NA,NA,NA,2,NA,NA,NA,NA,NA,TRUE,TRUE,NA
+2023-02-01T15:54:20Z,the quad!,1899-12-30T10:00:00Z,the quad!,their dorm?,Heads,Heads,7,100,1000,NA,NA,NA,NA,NA,NA
+2023-02-01T15:54:26Z,Millennium Park,1899-12-30T12:00:00Z,Regenstein Library,KGB,Heads,Tails,6,100,666,NA,NA,NA,NA,NA,NA
+2023-02-01T15:54:56Z,Bean,1899-12-30T10:00:00Z,Quad,Lab,Heads,Tails,9,99,999,NA,NA,NA,NA,NA,NA
+2023-02-01T15:55:45Z,Art Institute,1899-12-30T12:00:00Z,The Reg,Logan Square monument,Heads,Heads,0,100,100,NA,NA,NA,NA,NA,NA
+2023-02-01T15:55:53Z,Bean,1899-12-30T12:00:00Z,Reg,Kgb first floor,Heads,Tails,10,555,100,NA,NA,NA,NA,NA,NA
+2023-02-01T15:56:14Z,At the bean,1899-12-30T12:00:00Z,The quad,Prêt à manger,Heads,Tails,4,555,478,NA,NA,NA,NA,NA,NA
+2023-02-01T15:56:23Z,the airport,NA,the bells or the quad,their room,Heads,Tails,5,100,1000000,NA,NA,NA,NA,TRUE,NA
+2023-02-01T15:56:37Z,at their home,1899-12-30T10:00:00Z,library,at apartment,Heads,Heads,1,7,999,NA,NA,NA,TRUE,NA,NA
+2023-02-01T15:56:56Z,Bean,1899-12-30T12:00:00Z,Big arch,KGB,Heads,Heads,5,100,100000,NA,NA,NA,NA,NA,NA
+2023-02-01T15:57:01Z,Millennium park,1899-12-30T12:00:00Z,The square,KGB,Heads,Tails,5,100,100,NA,NA,NA,NA,NA,NA
+2023-02-01T15:57:03Z,The Bean!,1899-12-30T10:00:00Z,The quad,My office,Heads,Tails,7,100,1000000,NA,NA,NA,NA,NA,NA
+2023-02-02T11:06:58Z,I would meet them in an area with the most foot traffic (out of all locations in Chicago),1899-12-30T12:00:00Z,I would meet them in an area with the most foot traffic (out of all locations in UChicago),I would meet them at their dorm (they will eventually show up there),Heads,Heads,5,7,100,NA,NA,NA,TRUE,TRUE,NA
+2023-02-02T11:09:19Z,The Chicago Bean,1899-12-30T12:00:00Z,The Reg,The Reg,Heads,Tails,5,100,1e20,NA,NA,NA,NA,NA,NA
+2023-02-02T11:09:25Z,The Bean,1899-12-30T12:00:00Z,The center of the quad,Fraternity house,Tails,Heads,7,100,1000000,NA,NA,NA,NA,NA,NA
+2023-02-02T11:09:30Z,On campus.,1899-12-30T12:00:00Z,At the library.,In his room.,Heads,Heads,10,100,1000000000,NA,NA,NA,NA,NA,NA
+2023-02-02T11:09:43Z,A very common place or a major center within the city that everyone knows about.,1899-12-30T10:00:00Z,The Quad,At the CI and I (thats where we always end up),Tails,Tails,4,7,1000,NA,NA,NA,TRUE,NA,NA
+2023-02-02T11:09:49Z,The Bean,1899-12-30T12:00:00Z,The Quad (2nd choice: Reg),Their room,Heads,Heads,3,100,999,NA,NA,NA,NA,NA,NA
+2023-02-02T11:09:49Z,millenium park,1899-12-30T17:00:00Z,Regensgein,their residential building,Heads,Heads,0,7,999,NA,NA,NA,NA,NA,NA
+2023-02-02T11:09:51Z,The bean,1899-12-30T14:00:00Z,The Reg,Bartlett,Heads,Tails,5,100,1000000,NA,NA,NA,NA,NA,NA
+2023-02-02T11:10:05Z,the chicago bean?,1899-12-30T12:00:00Z,the reg,my room,Heads,Tails,7,7,100,NA,NA,NA,NA,NA,NA
+2023-02-02T11:10:29Z,Meet at the Bean,1899-12-30T13:00:00Z,1st floor of the Reg,Woodlawn lounge,Heads,Tails,7,7,1000000,NA,NA,NA,NA,NA,NA
+2023-02-02T11:10:52Z,"Millenium Park, the Bean",1899-12-30T11:00:00Z,"The reg, by the reception",pret,Heads,Heads,7,13,10000000,NA,NA,NA,NA,NA,NA
+2023-02-02T11:11:12Z,Bean,1899-12-30T02:30:00Z,Underneath the uchicago arch,Pret,Heads,Heads,7,100,10000000,NA,NA,NA,NA,NA,NA
+2023-02-02T11:14:23Z,I would go to the nearest coffee spot to my home,1899-12-30T12:01:00Z,Pret a Manager,Woodlawn dining hall,Tails,Heads,1,100,1000000,NA,NA,NA,NA,NA,NA
+2023-02-02T16:29:17Z,Nutella cafe/I wouldn’t go meet them,1899-12-30T12:30:00Z,The quad or the reg,My dorm house,Heads,Heads,5,555,10000,NA,NA,NA,NA,NA,NA
+2023-02-02T19:04:30Z,"I would probably go to Millenium Park because it is a big public setting. For one, it is a popular spot and it is also a huge public area so if anything bad we’re to happen people would see.",1899-12-30T15:00:00Z,I would go to a dining hall most likely,Either the crown weight room or bartlett/baker dining halls,Tails,Tails,3,7,1000000,NA,NA,NA,NA,NA,NA
+2023-02-02T20:56:34Z,The Bean.,1899-12-30T12:00:00Z,The quad.,My room,Heads,Tails,5,100,1000000000000,NA,NA,NA,NA,NA,NA
+2023-02-05T13:55:52Z,Grant Park,1899-12-30T12:00:00Z,The Reg,The Reg,Tails,Tails,5,555,1000000,NA,NA,NA,NA,NA,NA
+2023-02-07T11:01:22Z,It is literally impossible,1899-12-30T12:00:00Z,Reg,Their room,Heads,Heads,7,100,1000000,NA,NA,NA,NA,NA,NA
+2023-02-07T11:01:33Z,millenium park,1899-12-30T11:00:00Z,Reynolds club,the reg,Heads,Heads,6,100,12000,NA,NA,NA,NA,NA,NA
+2023-02-07T11:02:31Z,The quad,1899-12-30T12:00:00Z,The quad,Baker,Heads,Tails,10,100,1000000,NA,NA,NA,NA,NA,NA
+2023-02-07T11:02:41Z,The Bean,1899-12-30T01:00:00Z,Quad,Pret,Heads,Heads,5,7,100,NA,NA,NA,NA,NA,NA
+2023-02-07T11:02:47Z,The bean,1899-12-30T12:00:00Z,The quad,iHouse,Heads,Heads,8,13,9999,NA,NA,NA,NA,NA,NA
+2023-02-07T11:03:10Z,The Bean,1899-12-30T12:00:00Z,The Quad,House lounge,Heads,Heads,5,100,1000000,NA,NA,NA,NA,NA,NA
+2023-02-07T11:03:12Z,Chicago,1899-12-30T11:00:00Z,The Reg,Cathey,Heads,Tails,5,100,1000000,NA,NA,NA,NA,NA,NA
+2023-02-07T11:03:53Z,The bean,1899-12-30T11:00:00Z,Center of the quad,Baker dining hall,Heads,Tails,7,7,1000,NA,NA,NA,NA,NA,NA
+2023-02-07T11:03:53Z,The bean,1899-12-30T12:00:00Z,Quad or Bartlett,Bartlett or max p,Tails,Tails,7,100,1000000000000,NA,NA,NA,NA,NA,NA
+2023-02-07T11:03:55Z,The Bean,1899-12-30T12:00:00Z,The reg,Woodlawn,Heads,Heads,7,7,1000000000,NA,NA,NA,NA,NA,NA
+2023-02-07T11:03:57Z,The Bean,1899-12-30T19:00:00Z,The Main Quad,My Dorm Room,Heads,Heads,7,7,5000,NA,NA,NA,NA,NA,NA
+2023-02-07T11:05:28Z,Probably a cafe.,1899-12-30T18:00:00Z,Regenstein,Dining hall,Heads,Tails,7,7,1000000,NA,NA,NA,NA,NA,NA
+2023-02-07T11:06:41Z,NA,NA,NA,NA,Heads,Heads,5,13,NA,NA,NA,NA,NA,NA,NA
+2023-02-07T11:06:49Z,Somewhere on Campus,1899-12-30T02:00:00Z,the book store,our house lounge,Heads,Heads,7,7,10,NA,NA,NA,NA,NA,NA
+2023-02-07T11:07:27Z,Buckingham Fountain,1899-12-30T12:00:00Z,Quadrangle,Regenstein,Heads,Heads,7,7,1000000000,NA,NA,NA,NA,NA,NA
+2023-02-07T11:07:29Z,Sears Tower,1899-12-30T12:00:00Z,Regenstein,Beecher,Heads,Heads,7,13,1000,NA,NA,NA,NA,NA,NA
+2023-02-07T11:07:40Z,the bean,1899-12-30T12:00:00Z,the reg,my room,Heads,Heads,7,7,7,NA,NA,NA,NA,NA,NA
+2023-02-07T11:07:54Z,The bean,1899-12-30T15:00:00Z,Hutchinson,The reg 4th floor,Heads,Heads,7,7,7777777,NA,NA,NA,NA,NA,NA
+2023-02-07T11:07:55Z,Millenium park,1899-12-30T12:00:00Z,the Quad,the reg,Heads,Tails,5,7,1000000,NA,NA,NA,NA,NA,NA
+2023-02-07T11:08:06Z,The Bean,1899-12-30T11:00:00Z,The Reg,Pret,Heads,Heads,7,555,1000000000,NA,NA,NA,NA,NA,NA
+2023-02-07T11:08:07Z,The Bean,1899-12-30T12:00:00Z,The Quad,Our regular spot,Heads,Heads,7,555,1000000,NA,NA,NA,NA,NA,NA
+2023-02-07T11:08:28Z,I would go to Depaul University's Barnes and Nobles,1899-12-30T10:00:00Z,Bartlett,The reg,Heads,Tails,6,555,45,NA,NA,NA,NA,NA,NA
+2023-02-07T11:08:40Z,The bean,1899-12-30T18:00:00Z,The reg,South dorm,Tails,Tails,5,555,100,NA,NA,NA,NA,NA,NA
+2023-02-07T11:08:52Z,Willis Tower,1899-12-30T12:00:00Z,Regenstein Library,Hillel House,Heads,Tails,5,7,999999999,NA,NA,NA,NA,NA,NA
+2023-02-07T11:08:59Z,I would go to the bean,1899-12-30T12:00:00Z,Center of the quad,I go to their house,Heads,Heads,7,100,1000000,NA,NA,NA,NA,NA,NA
+2023-02-07T11:09:01Z,the bean,1899-12-30T12:00:00Z,the reg,their dorm,Heads,Heads,0,7,100,NA,NA,NA,NA,NA,NA
+2023-02-07T11:09:01Z,community center,1899-12-30T13:00:00Z,Reg,their room,Tails,Tails,5,555,10000,NA,NA,NA,NA,NA,NA
+2023-02-07T11:09:08Z,Very center of Chicago,1899-12-30T12:00:00Z,Regenstein Lobby,Regenstein Lobby,Heads,Heads,10,100,100,NA,NA,NA,NA,NA,NA
+2023-02-07T11:09:53Z,the bean,1899-12-30T12:00:00Z,The regenstein library,the regenstein library,Heads,Tails,7,7,150,NA,NA,NA,NA,NA,NA
+2023-02-07T11:10:03Z,millennium park,1899-12-30T12:00:00Z,Quad,Cathey,Tails,Tails,5,7,100,NA,NA,NA,NA,NA,NA
+2023-02-07T11:10:48Z,Roosavelt Station,1899-12-30T14:00:00Z,REG 518,Their dorm room,Heads,Heads,5,261,10000000,NA,NA,NA,NA,NA,NA
+2023-02-07T11:11:02Z,Planetarium,1899-12-30T15:00:00Z,Reg,Gates,Heads,Heads,7,7,7,NA,NA,NA,NA,NA,NA
+2023-02-07T11:11:07Z,River walk bridge,1899-12-30T02:00:00Z,Main quad,Cathey lounge,Heads,Heads,7,261,1000,NA,NA,NA,NA,NA,NA
+2023-02-07T11:11:07Z,the Bean,1899-12-30T12:00:00Z,the reg,quad,Tails,Tails,5,100,999,NA,NA,NA,NA,NA,NA
+2023-02-07T17:39:46Z,I will go meet them at the Bean.,1899-12-30T12:00:00Z,I will meet them at the Reg,I will meet her at Bartlett,Heads,Tails,7,7,1000000,NA,NA,NA,NA,NA,NA
+2023-02-07T20:00:57Z,the bean,1899-12-30T12:00:00Z,reg,their dorm,Heads,Heads,7,7,100,NA,NA,NA,NA,NA,NA
+2023-02-07T22:04:19Z,The Bean,1899-12-30T12:00:00Z,Pret,Crerar,Tails,Tails,7,7,1000000,NA,NA,NA,NA,NA,NA
+2023-02-08T01:36:02Z,"Park (or office, depends on context)",1899-12-30T12:00:00Z,Reg,Reg,Heads,Heads,5,100,1000000,NA,NA,NA,NA,NA,NA
+2023-02-08T14:17:48Z,Main quad,1899-12-30T12:00:00Z,Main quad,at Woodlawn dormitory,Heads,Tails,5,100,1000,NA,NA,NA,NA,NA,NA
+2023-02-08T18:16:35Z,Downtown near the tallest building in Chicago.,1899-12-30T14:00:00Z,The Quad,Their room (we live in the same hall),Heads,Heads,7,13,100,NA,NA,NA,NA,NA,NA
+2023-02-09T02:14:43Z,The Bean!,1899-12-30T12:00:00Z,The Main quad,The lobby of Woodlawn,Heads,Heads,7,13,100,NA,NA,NA,NA,NA,NA
+2023-11-03T09:26:35Z,The bean,1899-12-30T09:00:00Z,Regenstein,1155,Heads,Heads,7,7,100,"UChicago MA student (e.g., MAPSS, MACSS, Harris/Crown MA)","Woman, New to the University of Chicago (<1 year)",English,NA,NA,NA
+2023-11-03T09:29:07Z,Outside,1899-12-30T08:00:00Z,Library,Their house,Heads,Heads,4,100,9000,"UChicago MA student (e.g., MAPSS, MACSS, Harris/Crown MA)","New to the University of Chicago (<1 year), New to Chicago (<1 year)",NA,NA,NA,NA
+2023-11-03T09:51:18Z,the bean,1899-12-30T12:00:00Z,the reg,my apartment,Heads,Heads,5,13,555,"UChicago MA student (e.g., MAPSS, MACSS, Harris/Crown MA)","Woman, New to the University of Chicago (<1 year), New to Chicago (<1 year)",NA,NA,NA,NA
+2023-11-03T09:53:49Z,Cloud gate,1899-12-30T09:00:00Z,Regenstein Library,Rockefeller memorial chapel,Heads,Tails,10,7,10000000,"UChicago MA student (e.g., MAPSS, MACSS, Harris/Crown MA)",Woman,Chinese,NA,NA,NA
+2023-11-03T10:00:43Z,Downtown Art institute of Chicago,1899-12-30T13:00:00Z,Main quadrangle,Joseph Regenstein Library,Heads,Heads,5,555,999,"UChicago MA student (e.g., MAPSS, MACSS, Harris/Crown MA)",Woman,NA,NA,NA,NA
+2023-11-03T10:19:40Z,In a coffee shop or a quiet (brunch) restaurant.,1899-12-30T11:00:00Z,"In the library, or student lounges.","In their apartment or in my apartment. Or any where we want, like coffee shop or restaurant.",Heads,Heads,5,100,100,"UChicago MA student (e.g., MAPSS, MACSS, Harris/Crown MA)",Woman,Mandarin and English,NA,NA,NA
+2023-11-03T10:25:55Z,coffee shop,1899-12-30T02:00:00Z,starbucks,cafe,Heads,Heads,7,7,7,"UChicago MA student (e.g., MAPSS, MACSS, Harris/Crown MA)","Man, New to the University of Chicago (<1 year), New to Chicago (<1 year), New to the US (<1 year), Raised outside the US","mandarin, english, teochew",NA,NA,NA
+2023-11-03T10:38:03Z,Library,1899-12-30T14:00:00Z,Library,1155,Heads,Tails,3,99,99,"UChicago MA student (e.g., MAPSS, MACSS, Harris/Crown MA)",Woman,NA,NA,NA,NA
+2023-11-03T11:18:27Z,South Loop,1899-12-30T08:00:00Z,The Main Quadrangle,The place we always study together,Heads,Heads,7,99,100,"UChicago MA student (e.g., MAPSS, MACSS, Harris/Crown MA)","Woman, New to the University of Chicago (<1 year), New to Chicago (<1 year), New to the US (<1 year), Raised outside the US",Mandarin,NA,NA,NA
+2023-11-03T11:50:43Z,Willis Tower,1899-12-30T12:00:00Z,Mid-quadrangle,common spot,Heads,Heads,5,100,1000000,"UChicago MA student (e.g., MAPSS, MACSS, Harris/Crown MA)",Woman,English,NA,NA,NA
+2023-11-03T12:45:29Z,art institute entrance,1899-12-30T12:00:00Z,the quad,our apartment,Heads,Heads,6,100,1000000000,"UChicago MA student (e.g., MAPSS, MACSS, Harris/Crown MA)",NA,NA,NA,NA,NA
+2023-11-03T13:25:27Z,Cloud Gate (the giant mirrored bean),1899-12-30T10:00:00Z,bookstore,classroom building,Heads,Tails,5,99,100000000,"UChicago MA student (e.g., MAPSS, MACSS, Harris/Crown MA)","Woman, New to the University of Chicago (<1 year), New to Chicago (<1 year), Raised outside the US","Mandarin, English",NA,NA,NA
+2023-11-03T16:51:18Z,The bean,1899-12-30T11:00:00Z,Mansueto/reg entrance,Harper cafe,Heads,Tails,4,261,999,"UChicago MA student (e.g., MAPSS, MACSS, Harris/Crown MA)","Woman, New to the University of Chicago (<1 year), New to Chicago (<1 year), Raised outside the US","English, Hindi, Gujarati",NA,NA,NA
+2023-11-04T12:13:47Z,Art institute,1899-12-30T10:00:00Z,Regenstein Library,1155 building,Heads,Heads,5,7,100,"UChicago MA student (e.g., MAPSS, MACSS, Harris/Crown MA)","Woman, New to the University of Chicago (<1 year), New to Chicago (<1 year), Raised outside the US",Chinese,NA,NA,NA
+2023-11-04T20:30:15Z,Millennium Park,1899-12-30T10:00:00Z,Regenstein Library,Plain Air Cafe,Heads,Heads,7,100,9999,"UChicago MA student (e.g., MAPSS, MACSS, Harris/Crown MA)",Woman,Chinese; English,NA,NA,NA
+2023-11-05T22:48:37Z,Bean,1899-12-30T12:00:00Z,Quad,Front door,Tails,Tails,8,7,8,Other UChicago student,Woman,English,NA,NA,NA
+2023-11-06T16:20:43Z,To a place we talked about the most before agreeing to meet,1899-12-30T10:00:00Z,The library’s,Our normal meeting place,Heads,Heads,7,7,5555,"UChicago MA student (e.g., MAPSS, MACSS, Harris/Crown MA)","Woman, New to the University of Chicago (<1 year)",NA,NA,NA,NA
+2023-11-07T10:35:34Z,The bean (if it wasn’t still under construction),1899-12-30T12:00:00Z,1155 building,My apartment,Heads,Tails,7,7,1000,"UChicago MA student (e.g., MAPSS, MACSS, Harris/Crown MA)","Woman, New to the University of Chicago (<1 year), New to Chicago (<1 year)",English,NA,NA,NA
