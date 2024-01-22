@@ -473,3 +473,28 @@ f
 fct_expand(f, "d", "e", "f")
 fct_expand(f, letters[1:6])
 fct_expand(f, "Z", after = 0)
+
+
+##############################################
+############# WEEK 4 CLASS 1 #################
+##############################################
+
+# Bind rows
+
+df1 <- tibble(x = 1:2, y = letters[1:2])
+df2 <- tibble(x = 4:5, z = 1:2)
+bind_rows(df1, df2)
+#rbind(df1, df2) #throw error, column structure doesn't match
+#bind_rows allows for different column structures and will add NAs
+
+# Bind columns
+
+df1 <- tibble(x = 1:3) # 3 rows
+df2 <- tibble(y = 3:1) # 3 rows
+df3 <- tibble(z=1:5) # 5 rows
+bind_cols(df1, df2)
+bind_cols(df1, df3) #throw error, different number of rows
+cbind(df1, df2)
+cbind(df1, df3) #throw error, different number of rows
+#neither function works with different number of rows
+
