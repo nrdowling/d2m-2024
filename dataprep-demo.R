@@ -117,6 +117,6 @@ capital %>%
             mean_amount = mean(amount)) %>% 
   arrange(-mean_amount)
   
-  
+
   
 
