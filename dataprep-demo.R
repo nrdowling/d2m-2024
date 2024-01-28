@@ -55,9 +55,14 @@ summary(adultdata$age)
 # we can keep these commented out by default and uncomment as needed
 # that way we can run the script start to finish without displaying a series of plots that don't actually do anything in the data-prep process
 ggplot(adultdata, aes(age)) + geom_density()
+ggplot(adultdata, aes(age)) + geom_histogram(binwidth = 2)
+
 ggplot(adultdata, aes(`capital-gain`)) + geom_density()
 ggplot(adultdata, aes(age, `capital-gain`)) + geom_jitter()
 ggplot(adultdata, aes(age, `capital-loss`)) + geom_jitter()
+ggplot(adultdata, aes(age, `capital-loss`)) + geom_point()
+ggplot(adultdata, aes(age, `capital-loss`)) + geom_point(alpha=.2)
+
 
 # let's make some data prep changes to make our plots easier to interpret
 
