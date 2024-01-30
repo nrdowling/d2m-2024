@@ -36,7 +36,7 @@ sw.wrangled <- starwars %>%
   ## too_few="align_start": if less than one delim is found, treat the name like a first name and make last_name NA
   ## notice where in the column order the new columns appear vs if you did this with a mutate 
   separate_wider_delim(name, delim=" ", names = c("first_name", "last_name"), too_many="merge", too_few = "align_start") %>% 
-  # Change categorical variables to factors
+  # Change categorical variables (but currently character) to factors
   mutate(
     ## for the 2 detected levels of gender (feminine, masculine) relabel (i.e., rename/replace those values) with f & m
     gender = factor(gender, levels = c("feminine", "masculine"), labels = c("f", "m")),
@@ -57,7 +57,7 @@ sw.wrangled <- starwars %>%
   relocate(height_in, .before = height_cm) %>% 
   # move the new initials column to be immediately right of the last_name column
   relocate(initials, .after = last_name) %>% 
-  # sort by last_name and then (when last_name matches) by first_name
+  # sort by last_name and then (when last_name matches) by first_name 
   arrange(last_name, first_name)
 
 #write_csv(sw.wrangled, "data/sw-wrangled.csv")

@@ -1,0 +1,303 @@
+---
+title: "ggplot_iris_demo"
+author: "Grace Huang"
+date: "1/24/2024"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# load packages
+```{r}
+library(tidyverse)
+theme_set(theme_classic())  # pretty plots, there are other themes you can pick and choose
+                            # you can set a "global" theme
+```
+
+```{r}
+iris_df <- iris # this is a built-in dataset in r and is often used to demonstrate ggplot()
+                # to see more info, search iris in "Help"
+
+head(iris_df) # peek at the dataset
+str(iris_df)  # check structure
+              # we have 4 numeric variables and 1 factor variable
+```
+
+
+
+# 1-variable plots
+
+## bar graph of counts of iris by species
+### is this informative or meaningful?
+### but maybe if we imgagine that we have varied observations of iris by species, this might make more sense
+```{r}
+ggplot(iris, aes(x = Species)) +
+  geom_bar()
+```
+
+## Histogram
+```{r}
+# let's say we want to look at the distribution of iris by Petal.Length of all 150 observations
+# in other words, how many observations of iris fall into different bins of Petal.Length?
+# histogram would be right plot to examine this
+
+## it might also be a good idea to quickly chet the Petal.Length stats
+summary(iris$Petal.Length)
+
+ggplot(iris) +    # what happens if we add in "fill = Species" argument in aes maopping in this line?
+  geom_histogram(aes(x = Petal.Length), binwidth = .5, fill = "#5D3FD3") + 
+  labs(x = "Petal Length (cm)", y = "Frequency", title = "Histogram of Iris Distribution by Petal Length", caption = "Data: iris") + # what does "tag" do?
+  # there are other ways to set x and y range
+  # this is just what I prefer to do
+  coord_cartesian(ylim = c(0,50)) +
+  scale_y_continuous(breaks = seq(0,50, by = 10)) +
+  coord_cartesian(xlim = c(0,8)) +
+  scale_x_continuous(breaks = seq(0, 8, by = 1)) +
+  theme_minimal()
+```
+## Dotplot
+```{r}
+ggplot(iris, aes(x = Petal.Length)) +
+  geom_dotplot(binwidth = .1, color = "#5D3FD3")   # difference between fill v. color
+
+```
+
+
+# It's really easy to make a 1 variable plot into 2 variables
+## Dotplot
+```{r}
+ggplot(iris, aes(x = Species, y = Petal.Length, fill = Species)) +
+  geom_dotplot(binaxis = "y", binwidth = .1, stackdir = "center") +
+  scale_fill_manual(values = c("#ffd4c4", "#ffb5e2", "#ce70e8"))
+
+```
+
+
+## Density Plot
+### let's go back to the histogram above and see how we can do the same thing for the histogram and compare these 2 plots
+```{r}
+# let's try the same thing with density curve by Species
+## notice that the density curve is just a smoothed out version of the histogram (by species) from above :D
+
+iris %>% ggplot(aes(x = Petal.Length, color = Species)) + # difference between fill v. color
+         geom_density() +
+         scale_color_manual(values = c("#ffd4c4", "#ffb5e2", "#ce70e8")) +
+         theme_minimal() +
+         labs(x = "Petal Length (cm)", y = "Density",
+         title = "Density Curve of Iris Distribution by Petal Length", caption = "Data: iris")
+```
+
+# 2-variable plots
+
+## Bar graph - petal length by iris pecies
+```{r}
+# we've tried both from starting from the ggplot() function as well as starting from the data/object and then pipe
+# we can also summarize data first and then plot the summarized statistics. So cool!!
+
+iris %>%
+  # remove trials with missing observations
+  # notice that iris is an amazingly clean dataset with no NAs
+  # but this would be really helpful to do if varibles in your dataset has missing values
+  # to be super sure, we can use Natalie's handy codes "for(i in 1:ncol(iris)) {print(which(is.na(iris[,i])))}"
+  filter(!is.na(Petal.Length)) %>%
+  # to demo, here I'm summarizing the mean, sd, count, and se of the variable Petal.Length by Species
+  group_by(Species) %>%
+  # calculate the summary stats for the error bars and texts
+  summarise(mean_PetalLength = mean(Petal.Length),
+            sd_PetalLength = sd(Petal.Length),
+            N = sum(!is.na(Petal.Length)),
+            se_PetalLength = sd_PetalLength / sqrt(N)) %>% # this is just using the se formula/doing it by hand
+  
+  ggplot(aes(x = Species, y = mean_PetalLength, fill = Species)) +
+  # bar graph layer
+  geom_bar(alpha = .5, stat = "identity") +  # geom_bar v. geom_col
+  scale_fill_manual(values = c("#ffd4c4", "#ffb5e2", "#ce70e8")) +
+  # error bar layer
+  # this is the reason why we might consider starting by summarizing the stats and then graph
+  # it makes plotting error bars and adding texts easier
+  geom_errorbar(aes(ymin = mean_PetalLength - se_PetalLength, ymax = mean_PetalLength + se_PetalLength), width = 0.2) +
+  # here we're just adding and formatting the text for our stats
+  geom_text(aes(label = (round(mean_PetalLength, 2))),
+            position = position_dodge(width = .9),
+            vjust = -2, size = 4) +
+  coord_cartesian(ylim = c(0,7)) +
+  scale_y_continuous(breaks = seq(0, 7, by = 1)) +
+  labs(x = "Species", y = "Petal Length (cm)",
+       title = "Bar Graph of Petal Length by Iris Species", caption = "Data: iris")
+  # we can actually plot bars and points together and have different layers referencing different dataframes!
+  #geom_point(data = iris, position = position_jitter(width=0.4, height=0.1), # we can do this because we're
+             #aes(x = Species, y = Petal.Length, col = Species)) +            # just adding layers one after another
+  #scale_color_manual(values = c("#ffd4c4", "#ffb5e2", "#ce70e8"))
+  
+```
+
+## Box plot - petal length by iris pecies
+```{r}
+# boxplot might be the most sensible to use for visualizing iris
+
+iris %>%
+  ggplot(aes(x = Species, y = Petal.Length, fill = Species)) +
+  # boxplot layer
+  geom_boxplot(alpha = .5) +
+  # assign pretty colors
+  scale_fill_manual(values = c("#ffd4c4", "#ffb5e2", "#ce70e8")) +
+  coord_cartesian(ylim = c(0,7)) +
+  scale_y_continuous(breaks = seq(0, 7, by = 1)) +
+  # adding points because we can :D
+  ## note! this time we're plotting boxplot AND jitter from the SAME DATASET
+  geom_jitter(data = iris, aes(x = Species, y = Petal.Length, col = Species)) + # just for fun
+  scale_color_manual(values = c("#ffd4c4", "#ffb5e2", "#ce70e8")) +         # let's add "shape"
+  labs(x = "Species", y = "Petal Length (cm)",title = "Boxplot of Petal Length by Iris Species", caption = "Data: iris")
+```
+
+## Violin plot
+```{r}
+# Another option is to use violin, which could show us the distribution of the data.
+iris %>% ggplot(aes(x=Species, y=Petal.Length,color=Species)) +
+         geom_violin() +
+         scale_color_manual(values = c("#ffd4c4", "#ffb5e2", "#ce70e8")) +
+         coord_cartesian(ylim = c(0,7)) +
+         scale_y_continuous(breaks = seq(0, 7, by = 1)) +
+         theme_minimal() +
+# adding points because we can :D
+         geom_jitter(data = iris, aes(x = Species, y = Petal.Length, col = Species)) +
+         #scale_color_manual(values = c("#ffd4c4", "#ffb5e2", "#ce70e8")) + # we don't need this line this time, why?
+         labs(x = "Species", y = "Petal Length (cm)",
+              title = "Violin Plot of Petal Length by Iris Species", caption = "Data: iris")
+```
+
+## Scatterplot to examine relationship or association
+```{r}
+# now let's see this there's a relationship between Sepal.Length and Sepal.Width by Species,
+# using all that we've learned :D
+
+ggplot(data = iris, aes(x = Sepal.Width, y = Sepal.Length)) +
+  geom_point() +
+  theme_minimal() +
+         labs(x = "Sepal Width (cm)", y = "Spepal Length (cm)",
+              title = "Scatterplot of Sepal.Width v. Sepal.Length", caption = "Data: iris")
+```
+
+# 3-variable plots
+
+## Scatterplot to examine relationship or association
+```{r}
+# now let's see this there's a relationship between Sepal.Length and Sepal.Width by Species,
+# using all that we've learned :D
+
+ggplot(data = iris, aes(x = Sepal.Width, y = Sepal.Length, color = Species)) +
+  geom_point() +
+  theme_minimal() +
+  scale_color_manual(values = c("#ffd4c4", "#ffb5e2", "#ce70e8")) +
+         labs(x = "Sepal Width (cm)", y = "Spepal Length (cm)",
+              title = "Scatterplot of Sepal.Width v. Sepal.Length by Species", caption = "Data: iris")
+  #geom_smooth()
+```
+
+# an example of a graph that doesn't make practical sense but is grammatically valid
+```{r}
+ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) +
+  geom_line()
+  #scale_color_manual(values = c("#ffd4c4", "#ffb5e2", "#ce70e8"))
+  #theme(legend.position = "none")
+```
+
+## facet_wrap is your friend when you have more than 2 variables :D
+```{r}
+# here's another idea, let's try facet_wrap. When would this be helpful?
+# let's create a fake "expanded" dataset from iris. Let's assume the general stats for each Species don't change
+# BUT! Let's imagine they vary by Areas that they're grown in
+
+# let's assign a fake Area "A"
+toy_iris_A <- iris
+toy_iris_A$Area <- "Area A"
+
+# let's do the same thing for fake Area "B" and change the stats a little
+toy_iris_B <- iris
+toy_iris_B$Area <- "Area B"
+# changing stats
+toy_iris_B$Sepal.Length <- toy_iris_B$Sepal.Length + 2
+toy_iris_B$Sepal.Width <- toy_iris_B$Sepal.Width + 2
+toy_iris_B$Petal.Length <- toy_iris_B$Petal.Length + 2
+toy_iris_B$Petal.Width <- toy_iris_B$Petal.Width + 2
+
+# let's do the same thing for fake Area "C" and change the stats even more!
+toy_iris_C <- iris
+toy_iris_C$Area <- "Area C"
+# changing stats
+toy_iris_C$Sepal.Length <- toy_iris_C$Sepal.Length + 8
+toy_iris_C$Sepal.Width <- toy_iris_C$Sepal.Width + 8
+toy_iris_C$Petal.Length <- toy_iris_C$Petal.Length + 8
+toy_iris_C$Petal.Width <- toy_iris_C$Petal.Width + 8
+
+# yay! We now have this toy_iris dataframe with 450 observations
+toy_iris <- rbind(toy_iris_A, toy_iris_B, toy_iris_C)
+
+toy_iris %>%
+  ggplot(aes(x = Species, y = Petal.Length, fill = Species)) +
+  # facet_wrap layer to further separate species by Area of origin
+  facet_wrap(vars(Area)) +
+  # boxplot layer
+  geom_boxplot(alpha = .5) +
+  # assign pretty colors
+  scale_fill_manual(values = c("#ffd4c4", "#ffb5e2", "#ce70e8")) +
+  coord_cartesian(ylim = c(0,16)) +
+  scale_y_continuous(breaks = seq(0, 16, by = 1)) +
+  # adding points because we can :D
+  geom_jitter(data = toy_iris, aes(x = Species, y = Petal.Length, col = Species)) + # just for fun
+  scale_color_manual(values = c("#ffd4c4", "#ffb5e2", "#ce70e8")) +                              # let's add "shape"
+  labs(x = "Species by Area", y = "Petal Length (cm)",title = "Boxplot of Petal Length by Iris Speices and Area", caption = "Data: toy_iris") +
+  theme_bw()
+```
+
+# 4 variable plots
+## another scatterplot with toy_iris, using facet_wrap
+### this is an example of four-variable plot (Sepal.Width, Sepal.Length, Species, Area)
+```{r}
+ggplot(data = toy_iris, aes(x = Sepal.Width, y = Sepal.Length, color = Species)) +
+  geom_point(alpha = .7) +
+  facet_wrap(vars(Area)) +
+  theme_bw() +
+  scale_color_manual(values = c("#ffd4c4", "#ffb5e2", "#ce70e8")) +
+         labs(x = "Sepal Width (cm)", y = "Spepal Length (cm)",
+              title = "Scatterplot of Sepal.Width v. Sepal.Length by Iris Species and Area", caption = "Data: toy_iris")
+```
+
+# 5 variables?
+## 5 variables might be too many variables to plot. Is it possible to plot it?
+## Yes! But again, just because you can doesn't mean you should
+## Think about what is it that you want to convey about your findings and
+## make sure your graphs tell the story you want your audience to take away with
+```{r}
+toy_iris_trt <- toy_iris
+toy_iris_trt <- toy_iris_trt %>%
+  group_by(Area) %>%
+# here, I'm artificially imposing/splitting Sepal.Length into a higher half and a lower half for demo purposes
+  mutate(trt = ifelse(Sepal.Length >= quantile(Sepal.Length, 0.5), "Treatment", "Control"))
+#toy_iris_trt$trt <- factor(toy_iris_trt$trt, levels = c("Treatment", "Control")) # why did I factor here?
+                                                                                 # why might I re-level?
+
+ggplot(data = toy_iris_trt, aes(x = Sepal.Width, y = Sepal.Length, color = Species)) +
+  geom_point(alpha = .7) +
+  facet_grid(Area ~ trt) +
+  theme_bw() +
+  scale_color_manual(values = c("#ffd4c4", "#ffb5e2", "#ce70e8")) +
+         labs(x = "Sepal Width (cm)", y = "Spepal Length (cm)",
+              title = "Scatterplot of Sepal.Width v. Sepal.Length by Iris Species and Area", caption = "Data: toy_iris")
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
