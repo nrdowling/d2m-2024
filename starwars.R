@@ -61,3 +61,54 @@ sw.wrangled <- starwars %>%
   arrange(last_name, first_name)
 
 #write_csv(sw.wrangled, "data/sw-wrangled.csv")
+
+
+
+## ASSIGNMENT (11): RECREATE THESE PLOTS (BASIC) ##
+
+ggplot(sw.wrangled) +
+  geom_histogram(aes(x = height_cm), binwidth = 10)
+
+sw.wrangled %>% 
+  mutate(sorted_hair = fct_infreq(hair)) %>% 
+  ggplot() +
+  geom_bar(aes(x = sorted_hair))
+
+sw.wrangled %>% 
+  filter(mass < 300) %>% 
+  ggplot() +
+  geom_point(aes(x = height_in, y = mass), shape = "triangle")
+
+
+## ASSIGNMENT (12): RECREATE THESE PLOTS (INTERMEDIATE) ##
+
+sw.wrangled %>% 
+  filter(mass < 300) %>% 
+  ggplot() +
+  geom_boxplot(aes(x=fct_infreq(hair), y=mass, fill=fct_infreq(hair))) +
+  geom_point(aes(x=fct_infreq(hair), y=mass)) +
+  labs(x="Hair color(s)",
+       y="Mass (kg)",
+       fill="Colorful hair")
+
+sw.wrangled %>% 
+  mutate(brown_hair = ifelse(brown_hair, "Has brown hair", "No brown hair")) %>% 
+  ggplot(aes(mass, height_in)) +
+  geom_point() +
+  geom_smooth(method="lm") +
+  scale_x_continuous(limits = c(-200, 200)) +
+  scale_y_continuous(limits = c(-4, 200), breaks = c(-4, 20, 23, 80, 100)) +
+  facet_grid(cols = vars(brown_hair)) +
+  theme_minimal() +
+  labs(title = "Mass vs. height by brown-hair-havingness",
+       subtitle = "A critically important analysis")
+
+sw.wrangled %>% 
+  mutate(species_first_letter = fct_rev(factor(str_sub(species, 1, 1)))) %>%
+  filter(!is.na(species_first_letter)) %>% 
+  ggplot(aes(x=species_first_letter, fill=gender)) +
+  geom_bar() +
+  coord_flip() +
+  labs(caption = "A clear male human bias") +
+  theme_classic()
+
