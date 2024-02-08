@@ -62,7 +62,9 @@ sw.wrangled <- starwars %>%
 
 #write_csv(sw.wrangled, "data/sw-wrangled.csv")
 
-
+# 
+# sw.wrangled <- read_csv("data/sw-wrangled.csv") %>% 
+#   mutate(across(c(hair, gender, species, homeworld), factor))
 
 ## ASSIGNMENT (11): RECREATE THESE PLOTS (BASIC) ##
 
@@ -112,3 +114,48 @@ sw.wrangled %>%
   labs(caption = "A clear male human bias") +
   theme_classic()
 
+
+## ASSIGNMENT (13): RECREATE THIS PLOT (ADVANCED) ##
+
+library(ggsci)
+
+## Base plot
+# sw.wrangled %>% 
+#   ggplot(aes(x=height_cm, y=mass, color = gender)) +
+#   geom_point() +
+#   geom_smooth(method="lm") +
+#   facet_wrap(vars(gender))
+
+sw.wrangled %>% 
+  mutate(`Gender Presentation` = case_when(gender == "m" ~ "Male",
+                                           gender == "f" ~ "Female",
+                                           TRUE ~ "Other")) %>% 
+  ggplot(aes(x=height_cm, y=mass, color = `Gender Presentation`)) +
+  geom_point(alpha = .5) +
+  geom_smooth(method="lm", fill="#ccccff") +
+  facet_wrap(vars(`Gender Presentation`), scales = "free_y") +
+  scale_color_uchicago() +
+  scale_x_continuous(n.breaks = 8) +
+  labs(
+    title = "Height and weight across gender presentation",
+    subtitle = 'A cautionary tale in misleading "free" axis scales & bad design choices',
+    caption = "Color hint: use the ggsci package!",
+    x = "Height (cm)",
+    y = "Mass (kg)"
+  ) +
+  theme_bw() +
+  theme(
+    text = element_text(family="Comic Sans MS"),
+    strip.text = element_text(hjust = 0, color = "white", family = "Courier"),
+    strip.background = element_rect(fill = "darkgreen"),
+    axis.text.x = element_text(angle = 45, vjust = .5, hjust = .5),
+    axis.text.y = element_text(face = "bold.italic", hjust = 0),
+    legend.title = element_text(family = "Brush Script MT", size = 20),
+    legend.position = "bottom",
+    legend.background = element_rect(fill="#ccccff"),
+    plot.caption = element_text(angle = 180, hjust = 0, color = "red"),
+    panel.background = element_rect(fill = "#ffeeee"),
+    panel.grid.major.y = element_line(color = "lightgray", linewidth = 1, linetype = 4),
+    panel.grid.major.x = element_line(color = "white", linewidth = .5, linetype = 2),
+    panel.grid.minor = element_blank()
+  )

@@ -129,7 +129,7 @@ In the present study, we do not directly probe how interlocutors use focal point
 
 # Methods
 
-We constructed a survey modeled after Schelling's original report. Schelling himself did not perform a true "study" in reporting his results, but rather loosely surveyed the **graduate?** students in his class at **Yale?** in **the year**. Our data collection was similarly gathered quite loosely. The survey data were collected with the intention of serving a pedagogical purpose and with no intention to be published as rigorous study. While we cannot use these data to make empirical claims, they are nonetheless a useful and thought-provoking educational tool (as Schelling's data certainly were).
+We constructed a survey modeled after Schelling's original report. Schelling himself did not perform a true "study" in reporting his results, but rather loosely surveyed the graduate students in his class at Yale in **the year**. Our data collection was similarly gathered quite loosely. The survey data were collected with the intention of serving a pedagogical purpose and with no intention to be published as rigorous study. While we cannot use these data to make empirical claims, they are nonetheless a useful and thought-provoking educational tool (as Schelling's data certainly were).
 
 ## Survey design
 
@@ -188,8 +188,10 @@ plot_meetup(str_meetup, "str_where_clean")
 
 Response breakdown:
 
+
 ```{r str-kable, echo=FALSE, paged.print=TRUE}
 # Show kable of all (cleaned) responses with raw counts and percent
+
 kbl_responses(str_meetup, "str_where_clean")
 
 ```
