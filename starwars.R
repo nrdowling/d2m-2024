@@ -120,11 +120,11 @@ sw.wrangled %>%
 library(ggsci)
 
 ## Base plot
-# sw.wrangled %>% 
-#   ggplot(aes(x=height_cm, y=mass, color = gender)) +
-#   geom_point() +
-#   geom_smooth(method="lm") +
-#   facet_wrap(vars(gender))
+sw.wrangled %>%
+  ggplot(aes(x=height_cm, y=mass, color = gender)) +
+  geom_point() +
+  geom_smooth(method="lm") +
+  facet_wrap(vars(gender))
 
 sw.wrangled %>% 
   mutate(`Gender Presentation` = case_when(gender == "m" ~ "Male",
@@ -148,7 +148,7 @@ sw.wrangled %>%
     text = element_text(family="Comic Sans MS"),
     strip.text = element_text(hjust = 0, color = "white", family = "Courier"),
     strip.background = element_rect(fill = "darkgreen"),
-    axis.text.x = element_text(angle = 45, vjust = .5, hjust = .5),
+    axis.text.x = element_text(angle = 45, vjust = .5, hjust = .5), 
     axis.text.y = element_text(face = "bold.italic", hjust = 0),
     legend.title = element_text(family = "Brush Script MT", size = 20),
     legend.position = "bottom",

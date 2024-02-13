@@ -1,0 +1,430 @@
+---
+title: "Stats Demo"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+---
+
+
+```{r setup, warning=FALSE}
+
+# Set default chunk options 
+
+knitr::opts_chunk$set(
+	fig.height = 6,
+	fig.width = 7,
+	message = TRUE,
+	warning = FALSE,
+	comment = ""
+)
+
+# Load necessary libraries
+library(tidyverse)
+library(psych)
+library(stats)
+library(lme4)
+library(scales)
+```
+
+# Descriptive statistics
+
+```{r load-sw-df}
+# Use built-in dataset 'starwars' for analysis
+sw.desc <- starwars %>% 
+  select(height, mass) %>% 
+  drop_na() # as an alternative, include the `na.rm=T` argument in your measures functions
+
+# Create a long version to use for dplyr and ggplot stuff later
+sw.desc.long <- sw.desc %>% 
+  pivot_longer(c(height, mass), names_to = "measure") 
+```
+
+
+The quickest way to see summary statistics for a numeric variable is the `summary()` function:
+
+```{r summary-function}
+summary(sw.desc$height)
+summary(sw.desc$mass)
+```
+
+Or if you need to keep things a little more organied, create a summarized dataframe:
+
+```{r summarize-df}
+sw.desc.long %>% 
+  group_by(measure) %>% 
+  summarize(mean = mean(value),
+         median = median(value),
+         sd = sd(value),
+         range = diff(range(value))
+  )
+```
+
+## Distributions
+
+### Calculate measures of center
+
+You can also calculate everything piece by piece.
+
+"Measures of center" are different ways of talking about averages. Usually we think about "mean" as synonymous with "average", so calling these measures of center instead can be more precise. 
+
+Calculate mean and median with `mean()` and `median()`. There is no built-in mode function, but if you need one you can either write your own function or use the `modeest` library.
+
+```{r measures-of-center}
+mean_height <- mean(sw.desc$height)
+median_height <- median(sw.desc$height)
+
+mean_mass <- mean(sw.desc$mass)
+median_mass <- median(sw.desc$mass)
+```
+
+  - The mean height is `r round(mean_height, 3)` cm and median height is `r median_height` cm.
+  - The mean mass is `r round(mean_mass, 3)` kg and median mass is `r median_mass` kg.
+
+
+
+### Calculate measures of spread
+
+Measures of spread describe the distribution of continuous data around the center. Calculate standard deviation with `sd()`. Calculate range by getting a list of the minimum and maximum with `range()` and then using `diff()` to find the difference between the two.
+
+```{r measures-of-spread}
+sd_height <- sd(sw.desc$height) # standard deviation
+range_height <- diff(range(sw.desc$height))
+
+sd_mass <- sd(sw.desc$mass) # standard deviation
+range_mass <- diff(range(sw.desc$mass))
+```
+
+  - The standard deviation of height is `r round(sd_height, 3)` cm and the range is `r round(range_height, 3)` cm.
+  - The standard deviation of mass is `r round(sd_mass, 3)` kg and the range is `r round(range_mass, 3)` kg.
+  
+Other common measures of spread include variance, quantiles, and interquartile range:
+
+
+```{r more-spread-measures}
+
+sw.desc.long %>% 
+  group_by(measure) %>% 
+  summarize(variance = var(value),
+            median1 = median(value),
+            median2 = quantile(value, probs=0.5),
+            quartile = quantile(value, probs = c(.25, .75)),
+            iqr1 = IQR(value)
+  )
+
+```
+
+
+### Visualize center and spread
+
+Distribution plots visualize center and spread, for example boxplots, violin plots, histograms, and density plots.
+
+```{r histogram}
+ggplot(sw.desc.long) +
+  geom_histogram(aes(value), binwidth=15) + facet_wrap(vars(measure), ncol=1)
+
+```
+
+```{r density}
+
+ggplot(sw.desc.long) +
+  geom_density(aes(value, color=measure))
+```
+
+```{r boxplot}
+
+ggplot(sw.desc.long) +
+  geom_boxplot(aes(value, fill=measure)) +
+  scale_x_continuous(limits=c(0,300), oob=squish) 
+# you need the `scales` package for the oob argument to work as expected
+# in this case the scale will "squish" values outside the limits
+# to the nearest limit, so Jabba's huge mass will look like 300
+```
+
+```{r violin}
+
+ggplot(sw.desc.long) +
+  geom_violin(aes(x=measure, y=value, fill=measure)) +
+  scale_y_continuous(limits=c(0,300), oob=squish) 
+# you need the `scales` package for the oob argument to work as expected
+# in this case the scale will "squish" values outside the limits
+# to the nearest limit, so Jabba's huge mass will look like 300
+```
+
+## Correlation
+
+The `cor()` function creates a correlation matrix:
+
+```{r cormatrix}
+
+mass_height_corr <- cor(sw.desc) # using a matrix-like object (e.g., df)
+mass_height_corr2 <- cor(sw.desc[,1], sw.desc[,2]) # or vectors (e.g., df columns)
+
+```
+
+The correlation of height and mass is `r round(mass_height_corr2, 3)`.
+
+If you intend to use a correlation as a (quasi)hypothesis test, you'll need the `corr.test()` function in the `psych` package to give you $p$-values,
+
+```{r corr-tests}
+mass_height_corr3 <- corr.test(sw.desc)
+mass_height_corr4 <- corr.test(sw.desc[,1], sw.desc[,2])
+
+mass_height_corr3
+mass_height_corr4 
+```
+`View()` the object to see what the output contains and then extract elements like p-value:
+
+```{r pull-corr-vals}
+mass_height_corr3$p
+mass_height_corr3$p.adj
+mass_height_corr4$p
+```
+
+The default corr method is pearson, but you can change this. For example, Spearman rank correlation is useful for small samples:
+
+```{r corr-spearman}
+mass_height_corr_Spearman <- corr.test(sw.desc, method = "spearman")
+
+```
+
+  - Pearson $\rho$ = `r round(mass_height_corr3$ci2[["r"]], 3)` ($p$ = `r round(mass_height_corr3$ci2[["p"]], 3)`)
+  - Spearman ranked $\rho$ = `r round(mass_height_corr_Spearman$ci2[["r"]], 3)` ($p$ = `r round(mass_height_corr_Spearman$ci2[["p"]], 3)`)
+
+
+### Visualize correlation
+
+Visualizing correlation is functionally the same as visualizing linear regression. Combine a scatter plot with a regression line (using `geom_smooth()`):
+
+```{r viz-corr}
+ggplot(sw.desc) +
+  geom_point(aes(height,mass)) +
+  geom_smooth(aes(height,mass), method="lm") + 
+  coord_cartesian(ylim = c(0,300))
+```
+
+You can also visualize the correlation matrix with functions from other packages.
+
+```{r psych-corPlot}
+psych::corPlot(sw.desc) 
+```
+
+```{r corrplot}
+corrplot::corrplot(mass_height_corr)
+```
+
+```{r ggcorrplot}
+ggcorrplot::ggcorrplot(mass_height_corr)
+```
+
+None of these are thrilling with just two variables, but they can be very useful when you're using a correlation matrix across many variables.
+
+# Hypothesis Testing
+
+Hypothesis testing is anything you might usually think of as "results." Essentially: *do these data suggest some kind of non-random pattern?* The best hypothesis test to use will depend on a few factors, most significantly the data type of the independent (predictor) and dependent (outcome) variables.
+
+This flowchart is a quick-and-dirty, imperfect cheatsheet:
+
+![](images/StatsFlowChart.jpg)
+
+## Categorical Predictors
+
+### t-tests
+
+#### 1-sample
+
+A 1-sample t-test tells you the likelihood that the "true" mean of a value is not equal to 0 (or another reasonable, specific alternative).
+
+For example, a 1-sample t-test on the `mass` variable should return significant results, rejecting the null hypothesis that the true mean is 0. Since mass is necessarily a positive value, it is impossible that the true mean would be 0. 
+
+```{r ttest-simple}
+t.test(sw.desc$mass)
+```
+
+We can alternatively specify the mean that the null hypothesis should assume. Let's assume that the `starwars` dataset contains the mass of literally every character in Star Wars. In that case, the true population mean mass for Star Wars characters is `r round(mean(sw.desc$mass), 3)` kg. We can specify the null/true mean with the `mu` ($/mu$) argument.
+
+Is the mean of this sample different than the true mean? 
+
+```{r ttest-mu}
+t.test(sw.desc$mass, mu=mean(sw.desc$mass))
+```
+
+Obviously not, since the "sample" is what the true mean was calculated on. But if we consider the full dataset the true, full population, we can compare a sample to that population.
+
+```{r ttest-mu2}
+slice_sample(sw.desc, n=15) %>% 
+  t.test(sw.desc$mass,mu=mean(sw.desc$mass))
+```
+
+In nearly all cases (depending on your random seed) this will result in rejecting the null hypothesis. Essentially this is showing that there are some values (that of one mister The-Hutt, with a mass of `r round(arrange(sw.desc, -mass)$mass[[1]], 3)`) of mass that is such an outlier it makes the mean of the full sample not actually representative of the "average". (This is a case where median might be a better measure measure of center than mean.) If we get rid of the extreme outlier and use that as the "true" mean, things might look different.
+
+```{r no-jabba-mean}
+sw.desc.nojabba <- sw.desc %>% 
+  filter(!(mass > 5*median(mass))) 
+```
+
+Now randomly sampling from the dataframe will usually *not* be significantly different from that mean. Sometimes it will be though, just because of random variation. Sometimes is will be *extremely* significantly different. Why?
+
+```{r ttest-no-jabba}
+# notice that only the mu argument uses the dataset without jabba
+slice_sample(sw.desc, n=25) %>% 
+  t.test(sw.desc$mass, mu=mean(sw.desc.nojabba$mass))
+```
+
+#### 2-sample
+
+```{r sw-desc2-data}
+# similar df as before but now with some possible grouping vars
+sw.desc2 <- starwars %>% 
+  select(sex, gender, species, homeworld, height, mass)
+```
+
+While a 1-sample t-test compares a sample mean against a static value (like 0), a 2-sample t-test compares two sample means against each other. The null hypothesis of a 2-sample t-test is that the true means of the group are not different.
+
+Is the mass of male characters different from female characters?
+
+```{r ttest2-overall}
+## overall, sig.
+ttest2_overall <- t.test(
+       filter(sw.desc2, sex == "male")$mass,
+       filter(sw.desc2, sex == "female")$mass
+       )
+
+ttest2_overall
+```
+
+For all characters, yes. We can reject the null hypothesis that the means are the same ($t$ = `r round(ttest2_overall$statistic, 3)`, $p$ < `r round(ttest2_overall$p.value, 3)`).
+
+What if we just look at the humans?
+
+```{r ttest2-humans}
+ttest2_humans <- t.test(
+  filter(sw.desc2, sex == "male", species == "Human")$mass,
+  filter(sw.desc2, sex == "female", species == "Human")$mass
+)
+ttest2_humans
+```
+
+For humans, no. We cannot reject the null hypothesis that the means are the same ($t$ = `r round(ttest2_humans$statistic, 3)`, $p$ < `r round(ttest2_humans$p.value, 3)`).
+
+Outside the Star Wars Cinematic Universe, we know that the mean mass of male humans is higher than that of female humans. Rather than looking for *any* difference in means, we have a theoretical reason to look for a difference in one particular direction. If we set `alternative = "greater"`, the null hypothesis is that the true difference in means (mean-of-males - mean-of-females) is less than or equal to 0.
+
+```{r ttest2-humans-greater}
+ttest2_humans_greater <- t.test(
+  filter(sw.desc2, sex == "male", species == "Human")$mass,
+  filter(sw.desc2, sex == "female", species == "Human")$mass,
+  alternative = "greater"
+)
+ttest2_humans_greater
+```
+Now we do see a significant effect. We can reject the null hypothesis that the mean mass of females is greater than or equal to that of males are the same ($t$ = `r round(ttest2_humans_greater$statistic, 3)`, $p$ < `r round(ttest2_humans_greater$p.value, 3)`).
+
+
+Important optional arguments for t-tests:
+
+  - True mean ($\mu$): `mu`
+    - In a 1-sample test, the null hypothesis will compare the mean to 0 by default. You can change this to the "true mean".
+  - Alt hypothesis: `alternative = c("two.sided", "less", "greater")`
+    - By default this tests that the 1-var mean is not equal to 0 (or $\mu$) or that the 2-vars means are not equal to each other. If you are specifically looking to demonstrate that the mean is greater than or less than 0 (or $\mu$) or that one particular group's mean is greater than the others (e.g., you expect the control group to have poorer outcomes than the treatment/intervention group), set this to `less` or `greater`.
+  - Paired: `paired = FALSE`
+    - If the observations are related in some way, you can use a paired t-test. For example if you want to compare growth between pre-test and post-test, you're more interested in the change for each individual rather than either mean test score *per se*.
+  - Confidence level: `conf.level = 0.95`
+    - Set an alternative confidence interval when comparing means. This is rarely changed; 95% is almost always the expectation here.
+    
+
+### ANOVA
+
+Think of an Analysis of Variance (ANOVA) as an extension of the t-test. With a t-test you can compare the mean of 1 group to a static value or the means of 2 groups to each other. The basic functionality of ANOVA is to allow you compare three or more groups.
+
+ANOVA is a whole family of analyses, but we'll focus on just 1-way ANOVA and 2-way ANOVA. One-way ANOVA is appropriate when there is one categorical independent variable with multiple levels, while two-way ANOVA is used when there are two categorical independent variables and their interaction effect needs to be examined. 
+
+#### 1-Way ANOVA
+
+```{r starwars-hypothesis-data}
+
+sw.hyp <- starwars %>% 
+  select(name, height, mass, hair_color, skin_color, eye_color, sex, gender, homeworld, species) %>% 
+  mutate(hair_color = str_remove(hair_color, "[,].*$"),
+         eye_color = str_remove(eye_color, "[,].*$"),
+         skin_color = str_remove(skin_color, "[,].*$")) %>% 
+  mutate(sex3cat = case_when(sex %in% c("male", "female") ~ sex,
+                            TRUE ~ "other"),
+         hair4cat = case_when(hair_color %in% c("white", "grey") ~ "light",
+                              hair_color %in% c("blond", "blonde") ~ "blond",
+                              hair_color == "none" ~ "none",
+                              TRUE ~ "dark"))
+```
+
+
+**Example:** A psychologist wants to compare the effectiveness of three different stress reduction techniques (e.g., mindfulness meditation, progressive muscle relaxation, and deep breathing exercises) on reducing anxiety levels among participants.
+
+One-way ANOVA can be used to test for significant differences in anxiety levels (dependent variable, continuous) across the three stress reduction techniques (independent variable, factor). 
+
+If the p-value from the ANOVA test is significant, post-hoc tests (e.g., Tukey's HSD) can be conducted to determine which techniques differ significantly from each other.
+
+```{r}
+anova_sex3 <- aov(height ~ sex3cat, data=sw.hyp)
+summary(anova_sex3)
+
+TukeyHSD(anova_sex3)
+```
+Here there is a trending but non-significant difference in height across the 3 sex categories $F$() = `r round(summary(anova_sex3)[[1]]$F[1],3)`, $p$ = `r round(summary(anova_sex3)[[1]]$P[1],3)`.
+
+Using Tukey post-hoc adjustment we can see this difference is primarily driven by the difference in height between those in the "male" and "other" category. 
+
+#### 2-Way ANOVA
+
+**Example:** A psychologist conducts a study to investigate the effects of both gender (male vs. female) and stress level (low vs. high) on performance in a cognitive task.
+
+In this scenario, there are two independent variables: gender (with two levels: male and female) and stress level (with two levels: low and high). The dependent variable is performance in the cognitive task. Two-way ANOVA would be used to assess the main effects of gender and stress level, as well as their interaction effect on performance. The interaction effect indicates whether the effect of one independent variable depends on the level of the other independent variable.
+
+```{r}
+anova_sex3_hair4 <- aov(height ~ sex3cat + hair4cat, data=sw.hyp)
+summary(anova_sex3_hair4)
+
+TukeyHSD(anova_sex3_hair4)
+```
+```{r}
+anova_sex3_gender <- aov(height ~ sex3cat + gender, data=sw.hyp)
+summary(anova_sex3_gender)
+
+TukeyHSD(anova_sex3_gender)
+```
+
+Aside from being used as a hypothesis test itself, another important use for ANOVA is comparing model fit. For example, you create 3 possible regressions to test whether household income and/or proximity to grocery stores affects stress level using one variable, both variables, or both and an interaction effect. Passing these models to the `anova()` function can tell you which model best explains a predictive effect, so you can move forward just using that model.
+
+We can use the `mtcars` dataset to show a simple example: Does horsepower and/or weight predict a car's fuel consumption?
+
+```{r car-models}
+
+# Use the mtcars dataset
+
+# Model 1: Predicting mpg (miles per gallon) using horsepower
+model_hp <- lm(mpg ~ hp, data = mtcars)
+summary(model_hp)
+
+# Model 2: Predicting mpg using horsepower and weight
+model_hpwt <- lm(mpg ~ hp + wt, data = mtcars)
+summary(model_hpwt)
+
+# Model 3: Predicting mpg using horsepower, weight, with an interaction effect
+model_int <- lm(mpg ~ hp*wt, data = mtcars)
+summary(model_int)
+
+```
+
+All three models show a significant effect of the predictor variable(s). The question becomes which of these to use for the rest of the analyses and in the interpretation of our results. Comparing these models in an ANOVA tells us which model (if any) has a significantly better predictive fit.
+
+```{r car-models-anova}
+# Compare model fit using ANOVA; anova() function is in the stats package
+anova_result <- anova(model_hp, model_hpwt, model_int)
+
+# View the ANOVA table
+anova_result
+```
+The $p$-values here indicate whether there is a significant difference in fit between one model and the model that came before it. Assuming significant difference, the best model fit is the one with the lowest residual sum of squares (RSS).
+
+Note that depending on the type of models you're comparing, you might need to find the lowest value of something else. For example with mixed-effects models you'll (typically) look for the lowest BIC.
+
+
+
