@@ -27,7 +27,7 @@ abstract: |
 keywords          : "keywords"
 wordcount         : "X"
 
-bibliography      : "r-references.bib"
+#bibliography      : "r-references.bib"
 
 floatsintext      : yes
 linenumbers       : yes
@@ -302,7 +302,7 @@ Hypothesis testing is anything you might usually think of as "results." Essentia
 
 This flowchart is a quick-and-dirty, imperfect cheatsheet:
 
-![](images/StatsFlowChart.jpg) <!-- By including this image directly in the R Markdown (rather than in a code chunk), it will not be treated as a "Figure". It won't have a label, won't be numbered, won't be listed in a figure list, can't be referenced, etc. -->
+![](../../images/StatsFlowChart.jpg) <!-- By including this image directly in the R Markdown (rather than in a code chunk), it will not be treated as a "Figure". It won't have a label, won't be numbered, won't be listed in a figure list, can't be referenced, etc. -->
 
 ## Categorical Predictors
 

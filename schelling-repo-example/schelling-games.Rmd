@@ -97,7 +97,7 @@ r_refs("sg-references.bib")
 # CON: May not include recent response data
 
 
-responses_raw <- read_csv("data/responses_raw.csv", col_types = "TcTccccnnnccclll")
+responses_raw <- read_csv("data/responses-raw.csv", col_types = "TcTccccnnnccclll")
 
 # Note: last 3 columns indicate when the corresponding response is clearly a misinterpretation of the question
 # These errors were manually added based purely on human reasoning and healthy skepticism 

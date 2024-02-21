@@ -119,7 +119,7 @@ ggplot(mtcars.tidy, aes(cyl, mpg, color = transmission, fill = transmission)) +
   theme_classic()
 ```
 
-These effects are visualized in Figure \@ref(fig:plot-primary-results). 
+These effects are visualized in Figure\ \@ref(fig:plot-primary-results). 
 
 # Discussion {#disc}
 
@@ -140,6 +140,14 @@ This reproducible manuscript is written in RMarkdown [@xie2018bookdown], using t
 You know what else is awesome besides RMarkdown? Interactive gestures, which allow interlocutors to expediently facilitate conversation nonverbally [@bavelasetal_1992_interactive; @dowling_2022_obviously].[^1]
 
 [^1]: Sure this isn't relevant to anything else, but it's a great excuse to demo `citr` and talk about gesture at the same time!
+
+Briefly:
+
+- Brackets: `[@dowling2024d2mr]` [@dowling2024d2mr]
+- No brackets: `@dowling2024d2mr` @dowling2024d2mr
+- Brackets and hyphen: `[-@dowling2024d2mr]` [-@dowling2024d2mr]
+- No brackets and hyphen: `-@dowling2024d2mr` -@dowling2024d2mr **<-- not useful**
+
 
 We summarize our findings in subsection \@ref(disc) and note that subsection \@ref(refs)[^2] is unrelated to this report. Several texts used in the preparation of this manuscript but not directly cited are included in the references section because they are placed within the `nocite` section near the end of the RMarkdown document.
 

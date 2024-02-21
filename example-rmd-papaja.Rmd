@@ -1,6 +1,6 @@
 ---
-title             : "The title"
-shorttitle        : "Title"
+title             : "An Example Papaja Notebook with Lots of Kable Problems"
+shorttitle        : "Not a great example"
 
 author: 
   - name          : "First Author"
@@ -241,7 +241,7 @@ kbl(cbind(dt, dt, dt), # create a very wide table
 
 You can also scale *up* a table to make a small/narrow table full width with either the `scale_up` option (Table\ \@ref(tab:table-size-scaleup)) or `full_width` argument (Table\ \@ref(tab:table-size-fullwidth)).
 
-```{r table-size-scaleup, results='asis'}
+```{r table-size-scaleup, warning=FALSE, results='asis'}
 
 kbl(cbind(dt),
     caption = "Use the scale up option to stretch to full page width.") %>%
@@ -251,8 +251,8 @@ kbl(cbind(dt),
 ```{r table-size-fullwidth, results='asis'}
 
 kbl(dt, 
-    caption = "Stretch a small table to fit the page with the full width option.") %>%
-  kable_styling(full_width = T, latex_options = c("hold_position"))
+    caption = "Stretch a small table to fit the page with the full width option.") #%>%
+  #kable_styling(full_width = T, latex_options = "hold_position")
 
 ```
 
@@ -277,7 +277,6 @@ kbl(dt,
     caption = "Align your table (not the text, the whole table), 'left' or 'center' (the default) with the position argument.") %>% 
   kable_styling(position = "left", latex_options = c("hold_position"))
 ```
-
 
 
 ```{r table-floatright, eval=FALSE, include=FALSE, results='asis'}
@@ -399,7 +398,10 @@ kbl(dt, align = "c",
 )
 ```
 
-There is **so much more** you can do with kables! I am personally a huge fan of kables and the kableExtra package because it works beautifully with papaja, but you can also explore other packages for making beautiful tables:
+
+There is **so much more** you can do with kables! ~~I am personally a huge fan of kables and the kableExtra package because it works beautifully with papaja~~[^1], but you can also explore other packages for making beautiful tables:
+
+[^1]: Tragically this is no longer true. Many `kableExtra` functions now (as of Feb 2024) break spectacularly in papaja notebooks. 
 
   - [flextable](https://davidgohel.github.io/flextable/)
   - [gt table](https://gt.rstudio.com/)
@@ -407,8 +409,6 @@ There is **so much more** you can do with kables! I am personally a huge fan of 
   - [stargazer](https://cran.r-project.org/web/packages/stargazer/index.html)
     - This one is designed to simplify tables for regression output
   
-
-
 
 ## Figures and images
 
