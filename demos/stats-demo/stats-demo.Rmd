@@ -269,23 +269,29 @@ ggplot(sw.desc) +
   coord_cartesian(ylim = c(0,300))
 ```
 
-You can also visualize the correlation matrix with functions from other packages, including `corPlot()` from the `psych` package (Figure\ \@ref(fig:psych-corPlot)), `corrplot()` from the `corrplot` package (Figure\ \@ref(fig:corrplot)), and `ggcorrplot()` from the `ggcorrplot` package (Figure\ \@(fig:ggcorrplot)).
+You can also visualize the correlation matrix with functions from other packages, including `corPlot()` from the `psych` package (Figure\ \@ref(fig:psych-corPlot)), `corrplot()` from the `corrplot` package (Figure\ \@ref(fig:corrplot)), and `ggcorrplot()` from the `ggcorrplot` package (Figure\ \@ref(fig:ggcorrplot)).
 
-```{r psych-corPlot}
-psych::corPlot(sw.desc) 
+(ref:psych-corPlot-caption) Correlation matrix with `psych` package
+
+```{r psych-corPlot, fig.cap="(ref:psych-corPlot-caption)"}
+corPlot(sw.desc) 
 ```
 
-```{r corrplot}
+(ref:corrplot-caption) Correlation matrix with `corrplot` package
+
+```{r corrplot, fig.cap="(ref:corrplot-caption)"}
 # Prefacing the function with the package name will run that function without loading
 # the whole package, but the package does need to be installed on your machine
 corrplot::corrplot(mass_height_corr)
 ```
 
-```{r ggcorrplot}
+(ref:ggcorrplot-caption) Correlation matrix with `ggcorrplot` package
+
+```{r ggcorrplot, fig.cap="(ref:ggcorrplot-caption)"}
 ggcorrplot::ggcorrplot(mass_height_corr)
 ```
 
-None of these are thrilling with just two variables, but they can be very useful when you're using a correlation matrix across many variables. Figure
+None of these are thrilling with just two variables, but they can be very useful when you're using a correlation matrix across many variables. 
 
 (ref:more-interesting-matrices-caption) Correlation matrices for complex data, like the Harman (A) and Gorsuch (B) datasets in the psych package.
 
@@ -605,11 +611,13 @@ The linear model shows that for every additional unit of height (cm), mass incre
 
 (BTW: To see that this very simple regression is doing basically the same thing as the correlation, compare the $p$-values of the `cor.test` and of the `height` slope!)
 
-The lm also gives an intercept, which in this case is a fantastic example of when the intercept is simply not a useful thing to interpret: what should we expect the mass of a 0cm being to be? Apparently `r coefficients(mass_height_lm)[["(Intercept)"]]`, which is nonsensical. First of all, mass cannot be negative, but that could potentially just be the result of a bad model fit. More clearly, a being cannot exist with literally 0 height. If a real observation's predictor measurement *can literally never be 0*, the intercept does not have a meaninful interpretation. It's still important for the model's overall functionality and fit, but only the slope will go into our interpretation of the results. **Be careful: the intercept will have its own significance value!** It's almost always the significance of the *slope* that matters, so don't get excited when you see `***` on the intercept line of the model output.
+The lm also gives an intercept, which in this case is a fantastic example of when the intercept is simply not a useful thing to interpret: what should we expect the mass of a 0cm being to be? Apparently `r coefficients(mass_height_lm)[["(Intercept)"]]`, which is nonsensical. First of all, mass cannot be negative, but that could potentially just be the result of a bad model fit. More clearly, a being cannot exist with literally 0 height. If a real observation's predictor measurement *can literally never be 0*, the intercept does not have a meaningful interpretation. It's still important for the model's overall functionality and fit, but only the slope will go into our interpretation of the results. **Be careful: the intercept will have its own significance value!** It's almost always the significance of the *slope* that matters, so don't get excited when you see `***` on the intercept line of the model output.
 
-As discussed above, visualizing simple regression is the same as visualizing correlation: scatter plot and linear smoothing (Figure\ \@ref(fig:visualize-regression-mass-height)):
+As discussed above, visualizing simple regression is the same as visualizing correlation: scatter plot and linear smoothing (Figure\ \@ref(fig:visualize-regression-mass-height)):\
 
-```{r visualize-regression-mass-height}
+(ref:visualize-regression-mass-height-caption) Visualize simple regression of mass by height
+
+```{r visualize-regression-mass-height, fig.cap="(ref:visualize-regression-mass-height-caption)"}
 ggplot(sw.hyp, aes(x=height, y=mass)) +
   geom_point() +
   geom_smooth(method="lm")
@@ -666,7 +674,10 @@ Visualizing relationships between more than two continuous variables gets very c
 
 If you only have one continuous independent variable (the others are categorical or logical), you can use grouping strategies. Figure\ \@ref(fig:viz-mult-reg-one-cont) demonstrates this approach to show the effects of horsepower, transmission type (`am`), and engine type (`vs`) on fuel efficiency using color grouping and faceting.
 
-```{r viz-mult-reg-one-cont, fig.cap="MPG by HP, across engine and transmission type"}
+(ref: viz-mult-reg-one-cont-caption) MPG by HP, across engine and transmission type
+
+
+```{r viz-mult-reg-one-cont, fig.cap="(ref: viz-mult-reg-one-cont-caption)"}
 
 mtcars %>% 
   mutate(factor.am = factor(am),
@@ -681,7 +692,9 @@ mtcars %>%
 
 With multiple continuous predictors, you can use color, transparency, size, etc. to add another dimension without *literally* adding another dimension. Figure\ \@ref(fig:viz-mult-reg-two-cont) again shows horsepower's primary effect on MPG, while color adds in information about displacement.
 
-```{r viz-mult-reg-two-cont}
+(ref: viz-mult-reg-two-cont-caption) MPG by HP with 2 additional continuous variables
+
+```{r viz-mult-reg-two-cont, fig.cap="(ref: viz-mult-reg-one-cont-caption)"}
 
 mtcars %>% 
   ggplot(aes(x=hp, y=mpg)) +
@@ -692,7 +705,10 @@ mtcars %>%
 
 You can go crazy with even more continuous variables, but you probably shouldn't (Figure\ \@ref(fig:viz-mult-reg-four-cont)).
 
-```{r viz-mult-reg-four-cont}
+(ref: viz-mult-reg-four-cont-caption) MPG by HP with 4 additional continuous variables
+
+
+```{r viz-mult-reg-four-cont, fig.cap="(ref: viz-mult-reg-four-cont-caption)"}
 
 mtcars %>% 
   ggplot(aes(x=hp, y=mpg)) +
@@ -755,13 +771,94 @@ ggplot(mt2, aes(x = hp, y = highMPG)) +
   scale_y_continuous(breaks = c(0,1), labels = c("Low MPG", "High MPG"))
 ```
 
-# More...
+# More
 
-  - Poisson GLM (GLM with `family=poisson`)
-    - used for count data
-    - e.g., a psychologist wants to determine whether each of 3 intervention options decreases the number of times symptomatic behaviors are used in an observation period
-  - Generalized Linear Mixed-Effects Models (GLMM)
-    - used for nested or hierarchical data, where you need to account for random or spillover effects
-    - e.g., a psychologist want to determine the effectiveness of a teaching intervention. the intervention is administered at classroom level, but measured at the student level. the psychologist includes School ID as a random effect because they expect students will perform similarly to other students in their own school based on many factors unrelated to the intervention
+- Poisson GLM (GLM with `family=poisson`)
+  - used for count data
+  - e.g., a psychologist wants to determine whether each of 3 intervention options decreases the number of times symptomatic behaviors are used in an observation period
+- Generalized Linear Mixed-Effects Models (GLMM)
+  - used for nested or hierarchical data, where you need to account for random or spillover effects
+  - e.g., a psychologist want to determine the effectiveness of a teaching intervention. the intervention is administered at classroom level, but measured at the student level. the psychologist includes School ID as a random effect because they expect students will perform similarly to other students in their own school based on many factors unrelated to the intervention
+
+
+
+# In-text R code
+
+A critical component of using our D2M workflow for reproducible research is the ability to seamlessly integrate references to objects and object elements into the narrative text of your publication. When you run a model or summary and then identify coefficients, summary stats, or other important values in the output, you *could* type out those values as literal, static text. This is not only time-consuming, it problematically opens the door for significant human error each time the values must be manually updated.
+
+In-text R code is an alternative that allows you to replace this static text with dynamic code. Rather than changing the $\beta$, $p$-value, mean, etc. every time any tiny thing in your data or code processes change, the values are calculated during the knitting process. You add the code once, then (ideally) never need to modify it so long as the structure of your data and modeling stays the same.
+
+Fundamentally, think about in-text R code as a teeny-tiny code chunk that takes the "1-chunk-1-thing" rule to the extreme, so much so that the output of the whole thing is the same kind of thing you'd just type into a Word document otherwise. Everything within the code will run exactly like it's run in the console, meaning you can always quickly check how it will render when knit by just copying and pasting that code into your console in R Studio.
+
+The general format for in-text R is a backtick[^*], then a space, then as much code as you like (remember, literally what you'd see if you copied and pasted it into the console), then a closing backtick:
+
+`` `r knitr::inline_expr("yourCodeHere()")` ``
+
+[^*]: If you want to make something appear as "verbatim" text that looks like code, surround it in backticks without the "r" in front: `` `verbatim text` ``. If you want to include backticks within the literal code, smash your head against your desk until you give up.
+
+## Referencing values from lists and tibbles
+
+```{r create-ref-examples}
+
+ex_vector <- c("40", 30, "twenty", TRUE) # vectors are "lists" (but not R type lists) where everything is the same data type, so numeric 30 and logical TRUE are coerced to string
+
+ex_list <- list("40", 30, "twenty", TRUE) # actual lists can include multiple data types
+
+ex_tibble <- starwars %>% select(name, height, mass, films) %>% na.omit()
+
+```
+
+Something knitting in a way you didn't expect? Check that the class of your output is what you think it should be. In particular, if you want something to appear as regular-old in-line text, it needs to be a *value* data type, like numeric, character, or logical. The `cor()` function, for example, results in a simple numeric variable, while
+
+```{r corr-example}
+
+
+# simple correlation
+ex_cor <- cor(ex_tibble$height, ex_tibble$mass, use="complete.obs")
+ex_cor
+class(ex_cor) # output is a numeric value
+
+ex_cortest <- cor.test(ex_tibble$height, ex_tibble$mass)
+ex_cortest
+class(ex_cortest) # output is a numeric value
+
+```
+
+
+
+```{r lm-examples}
+# define a model
+ex_lm <- lm(data=ex_tibble, mass ~ height)
+
+# view simple model output
+ex_lm 
+
+# view summary of model output -- THIS IS USUALLY WHAT YOU WANT TO LOOK AT TO INTERPRET YOUR RESULTS
+summary(ex_lm)
+
+# view coefficients (stats package) - this is pretty simplistic for a simple linear regression
+# note that it doesn't give you p-values or SE
+coefficients(ex_lm)
+
+# "tidy" the output to create a TIBBLE of easily referenced elements
+# tidy() is in the "broom" package
+tidy_ex_lm <- tidy(ex_lm)
+tidy_ex_lm
+```
+
+
+```{r anova-examples}
+
+# identical to what's created in the anova section above
+ex_anova <- aov(height ~ sex3cat + gender, data=sw.hyp)
+ex_aov_summary <- summary(anova_sex3_gender) # save the summary as an object and then explore it in the viewer
+
+ex_aov_summary[[1]]$`Pr(>F)`[1]
+
+
+
+TukeyHSD(anova_sex3_gender)
+
+```
 
 
