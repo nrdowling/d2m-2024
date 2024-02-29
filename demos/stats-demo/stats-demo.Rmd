@@ -808,7 +808,7 @@ ex_tibble <- starwars %>% select(name, height, mass, films) %>% na.omit()
 
 ```
 
-Something knitting in a way you didn't expect? Check that the class of your output is what you think it should be. In particular, if you want something to appear as regular-old in-line text, it needs to be a *value* data type, like numeric, character, or logical. The `cor()` function, for example, results in a simple numeric variable, while
+Something knitting in a way you didn't expect? Check that the class of your output is what you think it should be. In particular, if you want something to appear as regular-old in-line text, it needs to be a *value* data type, like numeric, character, or logical. The `cor()` function, for example, results in a simple numeric variable, while..
 
 ```{r corr-example}
 
@@ -860,5 +860,8 @@ ex_aov_summary[[1]]$`Pr(>F)`[1]
 TukeyHSD(anova_sex3_gender)
 
 ```
+
+Here is: $p$ `r apa_p(ex_aov_summary[[1]]$"Pr(>F)"[2], add_equals=T)`.
+
 
 
